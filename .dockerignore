@@ -1,0 +1,14 @@
+cat > .dockerignore << 'EOF'
+node_modules
+build
+dist
+.git
+*.md
+.gitignore
+.dockerignore
+Dockerfile
+README.md
+.env
+.env.local
+public/videos/
+EOF
