@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { BtnLined } from "../BtnLined/BtnLined";
 import useMobile from "../../hooks/useMobile";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { flag_mx, flag_usa, arrow_down, terminal_logo, menu_mobil } from "../../data/img/img-data" //icons
