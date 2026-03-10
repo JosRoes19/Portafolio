@@ -2,19 +2,25 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Copiar archivos de configuración
 COPY package*.json ./
 COPY tsconfig*.json ./
 COPY vite.config.ts ./
 
+# Instalar dependencias
 RUN npm ci
 
-COPY public public/
-COPY src src/
+# Copiar TODOS los archivos necesarios
+COPY index.html ./
+COPY public/ public/
+COPY src/ src/
 
+# Construir la aplicación
 RUN npm run build
 
 FROM nginx:alpine
 
+# Copiar los archivos construidos
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Configuración para SPA (Single Page Application)
