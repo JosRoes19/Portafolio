@@ -1,0 +1,177 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+footer.footer-component {
+    background-color: #383A42;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    @include fonts.family-Graphik-Regular;
+
+    @include vars.adapted-content-web {
+        padding: fonts.px_to_vw(50, 1) fonts.px_to_vw(120, 1);
+        font-size: fonts.px_to_vw(16, 1);
+        line-height: fonts.px_to_vw(25 , 1);
+    }
+
+    @include vars.adapted-content-mobile {
+        padding: fonts.px_to_vw(50, 2) fonts.px_to_vw(30, 2);
+        font-size: fonts.px_to_vw(13, 2);
+        line-height: fonts.px_to_vw(15 , 2);
+    }
+
+    .footer-component-header {
+
+        @include vars.adapted-content-web {
+            display: flex;
+            flex-direction: row;
+            gap: fonts.px_to_vw(90, 1);
+            padding-bottom: fonts.px_to_vw(30, 1);
+        }
+
+        @include vars.adapted-content-mobile {
+            display: grid;
+            grid-template-areas: 
+                "logo"
+                "buttons"
+                "menu1"
+                "menu2";
+            gap: fonts.px_to_vw(20, 2);
+            margin-bottom: fonts.px_to_vw(20, 2);
+        }
+
+        .footer-component-header-div2,
+        .footer-component-header-div3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-component-header-div2 > *,
+        .footer-component-header-div3 > * {
+            color: white;
+            text-decoration: none;
+            @include fonts.family-Graphik-Medium;
+            @include vars.adapted-content-web {
+                margin: fonts.px_to_vw(8, 1);
+                font-size: fonts.px_to_vw(20, 1);
+                line-height: fonts.px_to_vw(20, 1);
+            }
+            @include vars.adapted-content-mobile {
+                grid-area: logo;
+                font-size: fonts.px_to_vw(13, 2);
+                line-height: fonts.px_to_vw(23, 2);
+            }
+        }
+
+        .footer-component-header-div1 {
+            @include vars.adapted-content-web {
+                flex: 1;
+            }
+            @include vars.adapted-content-mobile {
+                grid-area: logo;
+                margin-bottom: fonts.px_to_vw(20, 2);
+            }
+
+            .footer-component-header-div1-img1 {
+                @include vars.adapted-content-web {
+                    width: fonts.px_to_vw(188, 1);
+                }
+                @include vars.adapted-content-mobile {
+                    display: block;
+                    width: fonts.px_to_vw(102, 2);
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .footer-component-header-div2 {
+            border-color: #707070;
+            border-style: solid;
+            border-width: 0;
+            @include vars.adapted-content-mobile {
+                border-bottom-width: fonts.px_to_vw(1, 2);
+                padding-bottom: fonts.px_to_vw(20, 2);
+            }
+        }
+
+        .footer-component-header-div4 {
+            display: flex;
+            flex-direction: row;
+
+            @include vars.adapted-content-mobile {
+                grid-area: buttons;
+                justify-content: space-between;
+                margin: 0 auto;
+                margin-bottom: fonts.px_to_vw(10, 2);
+                gap: fonts.px_to_vw(20, 2);
+                width: fonts.px_to_vw(150, 2);
+            }
+            
+            @include vars.adapted-content-web {
+                gap: fonts.px_to_vw(30, 1);
+            }
+
+            img {
+                cursor: pointer;
+                transition: scale 0.1s ease-in-out;
+                &:hover {
+                    scale: 1.05;
+                }
+                @include vars.adapted-content-web {
+                    width: fonts.px_to_vw(43, 1);
+                    height: fonts.px_to_vw(43, 1);
+                    object-fit: contain;
+                }
+                @include vars.adapted-content-mobile {
+                    width: fonts.px_to_vw(34, 2);
+                    height: fonts.px_to_vw(34, 2);
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .footer-component-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-color: #707070;
+        border-style: solid;
+        border-width: 0;
+        
+        @include vars.adapted-content-web {
+            flex-direction: row;
+            padding-top: fonts.px_to_vw(29, 1);
+            border-top-width: fonts.px_to_vw(1, 1);
+        }
+
+        @include vars.adapted-content-mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: fonts.px_to_vw(38, 2);
+            border-top-width: fonts.px_to_vw(1, 2);
+        }
+
+        p {
+            color: #B5B5B5;
+            @include fonts.family-Graphik-Regular;
+            @include vars.adapted-content-web {
+                font-size: fonts.px_to_vw(21, 1);
+                line-height: fonts.px_to_vw(23, 1);
+            }
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(13, 2);
+                line-height: fonts.px_to_vw(15, 2);
+            }
+        }
+
+        img {
+            @include vars.adapted-content-web {
+                width: fonts.px_to_vw(390, 1);
+            }
+            @include vars.adapted-content-mobile {
+                width: fonts.px_to_vw(245, 2);
+            }
+        }
+    }
+}

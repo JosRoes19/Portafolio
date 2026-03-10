@@ -1,0 +1,29 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+.scroll-to-top-component {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 210;
+    right: fonts.px_to_vw(40);
+    bottom: fonts.px_to_vw(40);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fonts.px_to_vw(50);
+    height: fonts.px_to_vw(50);
+    padding: fonts.px_to_vw(15);
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.75);
+    
+    @include vars.adapted-content-mobile{
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}

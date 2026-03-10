@@ -1,0 +1,184 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+.div-content-index{
+    max-width: 100%;
+
+    @include vars.adapted-content-web {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fonts.px_to_vw(944, 1);
+        margin: fonts.px_to_vw(91, 1) auto 0;
+    }
+
+    .div-content-index-div1{
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        @include fonts.family-Graphik-Black;
+        
+        .div-content-index-div1-h1{
+            background-color: #ffffff;
+            @include vars.adapted-content-web{
+                position: absolute;
+                padding: fonts.px_to_vw(30, 1);
+                margin-top: fonts.px_to_vw(100, 1);
+                margin-left: fonts.px_to_vw(0, 1);
+                margin-right: fonts.px_to_vw(820, 1);
+                margin-bottom: fonts.px_to_vw(100, 1);
+                padding-left: fonts.px_to_vw(120, 1);
+                font-size: fonts.px_to_vw(70, 1);
+                line-height: fonts.px_to_vw(70, 1);
+                padding-bottom: 0.8vw;
+            }
+            @include vars.adapted-content-mobile{
+                letter-spacing: fonts.px_to_vw(-0.5, 2);
+                line-height: fonts.px_to_vw(27, 2);
+                width: fonts.px_to_vw(329, 2);
+                font-size: fonts.px_to_vw(26, 2);
+            }
+        }
+        @include vars.adapted-content-web{
+            margin-top: fonts.px_to_vw(91, 1);
+            margin-left: fonts.px_to_vw(-80, 1);
+            height: fonts.px_to_vw(261, 1);
+        }
+        @include vars.adapted-content-mobile{
+            order: 1;
+            margin-top: fonts.px_to_vw(10, 2);
+            margin-bottom: fonts.px_to_vw(21, 2);
+        }
+    }
+
+    .div-content-index-div2{
+        .div-content-index-div2-img{
+            width: fonts.px_to_vw(944, 1);
+            @include vars.adapted-content-mobile{
+                display: none;
+            }
+        }
+        .div-content-index-div2-img-mobile{
+            display: none;
+            @include vars.adapted-content-mobile{
+                display: block;
+                width: fonts.px_to_vw(340, 2);
+                height: fonts.px_to_vw(370, 2);
+            }
+        }
+        @include vars.adapted-content-mobile{
+            order: 2;
+        }
+    }
+
+    .div-content-index-div3{
+        .div-content-index-div3-img{
+            @include vars.adapted-content-web{
+                margin-left: fonts.px_to_vw(51, 1);
+                height: fonts.px_to_vw(794, 1);
+                width: fonts.px_to_vw(792, 1);
+            }
+            @include vars.adapted-content-mobile{
+                height: fonts.px_to_vw(323, 2);
+                width: fonts.px_to_vw(322, 2);
+                margin-bottom: fonts.px_to_vw(76, 2);
+            }
+        }
+        @include vars.adapted-content-web{
+            margin-top: fonts.px_to_vw(-128, 1);
+        }
+        @include vars.adapted-content-mobile{
+            order: 4;   
+        }
+    }
+    
+    @include vars.adapted-content-web{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: fonts.px_to_vw(571, 1) fonts.px_to_vw(666, 1);
+        margin-top: fonts.px_to_vw(184, 1);
+        width: fonts.px_to_vw(1920, 1);
+        height: fonts.px_to_vw(1421, 1);
+    }
+    
+    @include vars.adapted-content-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: fonts.px_to_vw(0, 2);
+        width: fonts.px_to_vw(394, 2);
+    }
+
+    .div-content-index-div4{
+        .div-content-index-div4-logo{
+            @include vars.adapted-content-web{
+                margin-top: fonts.px_to_vw(80, 1);
+                margin-bottom: fonts.px_to_vw(45, 1);
+                height: fonts.px_to_vw(80.94);
+                width: fonts.px_to_vw(229.26);
+            }
+            @include vars.adapted-content-mobile{
+                margin-top: fonts.px_to_vw(38.6, 2);
+                margin-bottom: fonts.px_to_vw(17.4, 2);
+                height: fonts.px_to_vw(36.01, 2);
+                width: fonts.px_to_vw(102, 2);
+            }
+        }
+
+        .div-content-index-div4-h1{
+            @include fonts.family-Graphik-Bold;
+            color: #313131;
+            @include vars.adapted-content-web{
+                font-size: fonts.px_to_vw(38, 1);
+                margin-bottom: fonts.px_to_vw(30, 1);
+            }
+            @include vars.adapted-content-mobile{
+                font-size: fonts.px_to_vw(24, 2);
+                margin-bottom: fonts.px_to_vw(12, 2);
+                letter-spacing: fonts.px_to_vw(-0.5, 2);
+                line-height: fonts.px_to_vw(26, 2);
+            }
+        }
+
+        .div-content-index-div4-h2{
+            @include fonts.family-Graphik-Regular;
+            color: #313131;
+            font-weight: lighter;
+            @include vars.adapted-content-web{
+                margin-bottom: fonts.px_to_vw(38, 1);
+                width: fonts.px_to_vw(670, 1);
+                font-size: fonts.px_to_vw(23, 1);
+                line-height: fonts.px_to_vw(29, 1);
+                letter-spacing: fonts.px_to_vw(-0.5, 1);
+            }
+            @include vars.adapted-content-mobile{
+                margin-bottom: fonts.px_to_vw(35, 2);
+                font-size: fonts.px_to_vw(16, 2);
+                line-height: fonts.px_to_vw(22, 2);
+                letter-spacing: fonts.px_to_vw(-0.5, 2);
+            }
+        }
+
+        .index-content-button {
+            @include vars.adapted-content-mobile{
+                margin: auto;
+                margin-bottom: fonts.px_to_vw(35, 2);
+            }
+            
+            button, a {
+                @include fonts.family-Graphik-Medium;
+            }
+        }
+        
+        @include vars.adapted-content-web{
+            margin-left: fonts.px_to_vw(0, 1);
+            margin-right: fonts.px_to_vw(146, 1);
+        }
+        @include vars.adapted-content-mobile{
+            order: 3;
+            margin-left: fonts.px_to_vw(35, 2);
+            margin-right: fonts.px_to_vw(44, 2);   
+        }
+    }
+}

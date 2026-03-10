@@ -1,0 +1,77 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+.component-btn-lined {
+    background-color: transparent;
+    outline: none;
+    color: var(--custom-color);
+    border-color: var(--custom-color);
+    border-style: solid;
+    border-radius: 1vw;
+    font-weight: 500;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+    @include fonts.family-Graphik-Medium;
+
+    &:hover {
+        background-color: var(--custom-color);
+        span {
+            color: var(--custom-text);
+        }
+    }
+    
+    @include vars.adapted-content-web {
+        font-size: fonts.px_to_vw(18);
+        padding: fonts.px_to_vw(10) fonts.px_to_vw(20);
+        gap: fonts.px_to_vw(15);
+        border-radius: fonts.px_to_vw(20);
+        border-width: fonts.px_to_vw(1);
+    }
+    @include vars.adapted-content-mobile {
+        font-size: fonts.px_to_vw(18, 2);
+        padding: fonts.px_to_vw(10, 2) fonts.px_to_vw(20, 2);
+        gap: fonts.px_to_vw(10, 2);
+        border-radius: fonts.px_to_vw(20, 2);
+        border-width: fonts.px_to_vw(1, 2);
+    }
+
+    img {
+        transition: all 0.1s ease-in-out;
+        height: fonts.px_to_vw(12, 1);
+        @include vars.adapted-content-mobile {
+            max-width: fonts.px_to_vw(22, 2);
+            height: fonts.px_to_vw(12, 2);
+        }
+    }
+
+    .icon {
+        background-color: red;
+        height: fonts.px_to_vw(12, 1);
+        width: fonts.px_to_vw(20, 1);
+        mask-image: var(--icon);
+        @include vars.adapted-content-mobile {
+            max-width: fonts.px_to_vw(20, 2);
+            height: fonts.px_to_vw(12, 2);
+        }
+
+        img {
+            opacity: 0;
+        }
+    }
+
+    &.as-focuse {
+        background-color: var(--custom-color);
+        span {
+            color: var(--custom-text);
+        }
+    }
+
+    span, a {
+        @include fonts.family-Graphik-Medium;
+        transition: color 0.1s ease-in-out;
+    }
+}
