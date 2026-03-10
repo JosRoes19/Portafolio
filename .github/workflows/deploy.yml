@@ -36,6 +36,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
             # Usando la estructura de carpetas que me mostraste
             cd /home/${{ secrets.SSH_USER }}/docker/proyectos/portafolio
