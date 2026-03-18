@@ -2,13 +2,13 @@
 //import { BtnLined } from "../../../components/BtnLined/BtnLined";
 //import Animator from "../../../components/Animator/Animator";
 //import { "iconos" } from '../../../data/img/img-data';
-import './ContentServicesView.scss';
+import './ContentResumeView.scss';
 
-export const ContentServicesView = () => {
+export const ContentResumeView = () => {
     //const { t } = useTranslation();
 
     return(
-        <div className="div-content-services-view">
+        <div className="div-content-resume-view">
 
         </div>
     )

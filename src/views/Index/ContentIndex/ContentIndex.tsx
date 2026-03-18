@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
 import Animator from "../../../components/Animator/Animator";
-import { icon_arrow_right } from '../../../data/img/img-data';
+import { arrow_right, arrow_right_white } from '../../../data/img/img-data';
 import './content-index.scss';
 
 export const ContentIndex = () => {
@@ -32,7 +32,7 @@ export const ContentIndex = () => {
                         {/* <img src={} alt={} className='div-content-index-div4-logo'/> */}
                         <h1 className='div-content-index-div4-h1'>{t('index.content.content_subtitle')}</h1>
                         <h2 className='div-content-index-div4-h2'>{t('index.content.content_text1')}</h2>
-                        <BtnLined to='/aboutUs' className='index-content-button' text={t('global.button_conoce')} customColor='black' customIcon={icon_arrow_right} />
+                        <BtnLined to='/aboutUs' className='index-content-button' text={t('global.button_conoce')} customColor='white' customIcon={arrow_right_white} hoverIcon={arrow_right} />
                     </Animator>
                 </div> 
             </div>

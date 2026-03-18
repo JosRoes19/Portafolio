@@ -1,17 +1,17 @@
 @use "/src/styles/variables.scss" as vars;
 @use "/src/styles/fonts.scss" as fonts;
 
-.section-banner-index{
+.section-banner-index {
     max-width: 100%;
     position: relative;
     background-color: black;
     
-    @include vars.adapted-content-web{
+    @include vars.adapted-content-web {
         height: fonts.px_to_vw(847);
         overflow: hidden;
     }
-    @include vars.adapted-content-mobile{
-        width:fonts.px_to_vw(393, 2);
+    @include vars.adapted-content-mobile {
+        width: fonts.px_to_vw(393, 2);
         height: fonts.px_to_vw(853, 2);
     }
 
@@ -23,7 +23,7 @@
         object-fit: cover;
         opacity: 0.6;
         
-        @include vars.adapted-content-web{
+        @include vars.adapted-content-web {
             height: fonts.px_to_vw(847);
             top: 50%;
             left: 50%;
@@ -35,103 +35,54 @@
             object-position: center;
         }
         
-        @include vars.adapted-content-mobile{
+        @include vars.adapted-content-mobile {
             height: fonts.px_to_vw(853, 2);
-            top: 0;
-            left: 0;
-            width: 100%;
-            transform: none;
-            object-position: initial;
         }
     }
     
-    .container-banner-solutions-overlay{
-        @include vars.adapted-content-web{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            gap: fonts.px_to_vw(34);
+    .container-banner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        
+        @include vars.adapted-content-web {
+            margin-bottom: fonts.px_to_vw(20,1);
         }
-        @include vars.adapted-content-mobile{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            gap: fonts.px_to_vw(62, 2);
+        @include vars.adapted-content-mobile {
+            padding-bottom: fonts.px_to_vw(20, 2);
+        }
+    }
+
+    .index-banner-button {
+        margin-top: fonts.px_to_vw(400,1);
+
+        @include vars.adapted-content-web {
+            font-size: fonts.px_to_vw(22) !important;
+            padding: fonts.px_to_vw(14) fonts.px_to_vw(32) !important;
+            border-radius: fonts.px_to_vw(32) !important;
+            gap: fonts.px_to_vw(20) !important;
+            
+            img {
+                height: fonts.px_to_vw(16) !important;
+                width: auto;
+            }
         }
         
-        .container-img-logo{
-            width: fonts.px_to_vw(209.86);
-            height: fonts.px_to_vw(74.09);
-            @include vars.adapted-content-mobile{
-                width: fonts.px_to_vw(107.63, 2);
-                height: fonts.px_to_vw(38, 2);
+        @include vars.adapted-content-mobile {
+            margin-top: fonts.px_to_vw(350,2);
+
+            font-size: fonts.px_to_vw(15, 2) !important;
+            padding: fonts.px_to_vw(10, 2) fonts.px_to_vw(20, 2) !important;
+            border-radius: fonts.px_to_vw(34, 2) !important;
+            gap: fonts.px_to_vw(10, 2) !important;
+            
+            img {
+                height: fonts.px_to_vw(18, 2) !important;
             }
         }
-
-        .container-banner-titulo{
-            width: fonts.px_to_vw(1550, 1);
-            height: auto;
-            text-align: center;
-            
-            h1{
-                font-size: fonts.px_to_vw(80);
-                @include fonts.family-Graphik-Black;
-                color: white;
-                line-height: fonts.px_to_vw(98);
-                letter-spacing: fonts.px_to_vw(2);
-                text-transform: uppercase;
-
-                @include vars.adapted-content-web{
-                    height: fonts.px_to_vw(240, 1);
-                    font-size: fonts.px_to_vw(80, 1);
-                    line-height: fonts.px_to_vw(76, 1);
-                }
-                @include vars.adapted-content-mobile{
-                    font-size: fonts.px_to_vw(115, 1);
-                    line-height: fonts.px_to_vw(150, 1);
-                } 
-            }
-        }
-
-        .banner_button{
-            margin-top: fonts.px_to_vw(35);
-            background-color: transparent;
-            border-color: white;
-            width: fonts.px_to_vw(201);
-            height: fonts.px_to_vw(46);
-            font-size: fonts.px_to_vw(18);
-            cursor: pointer;
-            color: white;
-            border-radius: fonts.px_to_vw(25);
-            @include fonts.family-Graphik-Medium;
-            
-            @include vars.adapted-content-mobile{
-                margin-top: fonts.px_to_vw(23, 2);
-                background-color: transparent;
-                border-color: white;
-                width: fonts.px_to_vw(229.73, 2);
-                height: fonts.px_to_vw(50.78, 2);
-                font-size: fonts.px_to_vw(20, 2);
-                color: white;
-                border-radius: fonts.px_to_vw(25, 2);
-            }
-            
-            .right_arrow{
-                padding-left: fonts.px_to_vw(20);
-                width: fonts.px_to_vw(22);
-                height: fonts.px_to_vw(12);
-                @include vars.adapted-content-mobile{
-                    padding-left: fonts.px_to_vw(23, 2);
-                    width: fonts.px_to_vw(22, 2);
-                    height: fonts.px_to_vw(12, 2); 
-                }
-            }
-        }
-    } 
+    }
 }

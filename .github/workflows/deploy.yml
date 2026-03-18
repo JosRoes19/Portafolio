@@ -34,10 +34,10 @@ jobs:
       - name: Conectar y desplegar en servidor
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          host: ssh.homedecks.duckdns.org
+          username: homedeckserver
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: 52222
           script: |
             # Usando la estructura de carpetas que me mostraste
             cd /home/${{ secrets.SSH_USER }}/docker/proyectos/portafolio

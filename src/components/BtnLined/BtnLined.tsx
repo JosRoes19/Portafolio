@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { icon_arrow_right } from '../../data/img/img-data';
+import { arrow_right } from '../../data/img/img-data';
 import useMobile from '../../hooks/useMobile';
 import './btnLined.scss';
 import { useState } from 'react';
@@ -60,7 +60,7 @@ export const BtnLined = ({
             {...props}
         >
             <span>{text}</span>
-            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? icon_arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? icon_arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(1)" }} /> }
+            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(1)" }} /> }
         </button>
     }
 
@@ -74,7 +74,7 @@ export const BtnLined = ({
             {...props}
         >
             <span>{text}</span>
-            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? icon_arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? icon_arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(0)" }} /> }
+            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(0)" }} /> }
         </button>
     );
 }

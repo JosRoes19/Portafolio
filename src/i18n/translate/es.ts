@@ -1,3 +1,5 @@
+import { BtnLined } from "../../components/BtnLined/BtnLined";
+
 export const language_es = {
    lang: "es",
    global: {
@@ -48,41 +50,8 @@ export const language_es = {
          informative_text2: 'En 345 INGENIERÍA nos especializamos en el desarrollo de proyectos ejecutivos de alto nivel.',
          informative_text3: 'Respetamos los tiempos de entrega con una planificación eficiente y ejecución precisa.'
       },
-      informative:{
-         informative_title: 'CONVERTIMOS IDEAS EN ESTRUCTURAS QUE TRASCIENDEN',
-         informative_subtitle: 'Somos una empresa con alcance en todo México, especializada en ingeniería, construcción y desarrollo de proyectos ejecutivos para infraestructuras, edificaciones y obra civil de alto impacto.',
-         informative_text1: 'Nuestra experiencia nos permite ofrecer soluciones integrales, desde la planificación y diseño hasta la ejecución y supervisión, garantizando proyectos eficientes, seguros y sostenibles.',
-
-      },
-      our_solutions:{
-         title: "NUESTRAS SOLUCIONES",
-         description: "Nuestra experiencia nos permite ofrecer soluciones integrales, desde la planificación y diseño hasta la ejecución y supervisión, garantizando proyectos eficientes, seguros y sostenibles.",
-         text1:"SOLUCIONES INDUSTRIALES",
-         text2:"SOLUCIONES COMERCIALES",
-         text3:"En 345 INGENIERÍA, diseñamos y ejecutamos proyectos comerciales adaptados a las necesidades de cada negocio.",
-         text4:"CAPTACIÓN DE AGUA PLUVIAL",
-         text5:"Diseñamos infraestructura industrial segura y eficiente para potenciar la productividad y el crecimiento.",
-         text6:"Optimizamos espacios para mejorar la funcionalidad, eficiencia y experiencia del usuario en proyectos comerciales.",
-         text7:"Implementamos soluciones sustentables para recolectar y aprovechar el agua de lluvia, reduciendo costos y consumo de recursos hídricos."
-      },
-
-      building_the_future:{
-         title: "CONSTRUYENDO EL FUTURO CON PRECISIÓN"
-      },
-
-      solutions_to_the_measure:{
-         title: "SOLUCIONES A LA MEDIDA",
-         text:"En 345 INGENIERÍA diseñamos y ejecutamos soluciones personalizadas que optimizan espacios, recursos y tiempos, garantizando funcionalidad, seguridad y eficiencia.",
-         button:"Comencemos tu proyecto"
-      },
-
-      projects: {
-         title1: "ALGUNOS DE",
-         title2: "NUESTROS PROYECTOS",
-      },
-
-      comprometidos: {
-         title: "COMPROMETIDOS CON TU PROYECTO"
+      BtnLined: {
+         btnBanner: "Construyamos nuevos proyectos juntos."
       },
    },
    about_us:{

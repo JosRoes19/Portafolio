@@ -48,13 +48,14 @@ export const arrow_top_scroll_icon ={
     url: '/icons/arrow_top_scroll.svg',
     alt: 'arrow_top_scroll_icon'
 }
-export const icon_arrow_right={
-    url: '/icons/icon_arrow_right.svg',
-    alt: 'icon_arrow_right'
+export const arrow_right={
+    url: '/icons/arrow_right.svg',
+    alt: 'arrow_right'
 }
-export const icon_arrow_right_blue={
-    url: '/icons/icon_arrow_right_blue.svg',
-    alt: 'icon_arrow_right_blue'
+
+export const arrow_right_white = {
+    url: '/icons/arrow_right_white.svg',
+    alt: 'arrow_right_white'
 }
 
 export const icon_whatsapp={
