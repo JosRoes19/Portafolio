@@ -37,7 +37,7 @@ export const language_es = {
       index: "Inicio",
       projects: "Proyectos",
       aboutme: "Sobre Mí",
-      services: "Servicios",
+      resume: "Currículum",
       contact: "Contacto",
    },
    index:{
@@ -284,7 +284,7 @@ export const language_es = {
       index: "Inicio",
       projects: "Proyectos",
       aboutme: "Sobre Mí",
-      services: "Servicios",
+      resume: "Currículum",
       contact: "Contacto",
    },
    menu2:{

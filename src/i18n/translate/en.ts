@@ -36,7 +36,7 @@ export const language_en = {
       index: "Home",
       projects: "Projects",
       aboutme: "About Me",
-      services: "Services",
+      resume: "Resume",
       contact: "Contact",
     },
     index:{

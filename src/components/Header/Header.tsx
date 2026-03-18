@@ -52,7 +52,7 @@ export const Header = () => {
                             <Link to='/' className={'main-header-menu-component-mobile-link' + (isSelected("/") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.index')}</Link>
                             <Link to='/projects' className={'main-header-menu-component-mobile-link' + (isSelected("/projects") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.projects')}</Link>
                             <Link to='/aboutme' className={'main-header-menu-component-mobile-link' + (isSelected("/aboutme") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.aboutme')}</Link>
-                            <Link to='/services' className={'main-header-menu-component-mobile-link' + (isSelected("/services") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.services')}</Link>
+                            <Link to='/resume' className={'main-header-menu-component-mobile-link' + (isSelected("/resume") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.resume')}</Link>
                             <Link to='/contact' className={'main-header-menu-component-mobile-link' + (isSelected("/contact") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.contact')}</Link>
                         </div>
                         <hr />
@@ -73,7 +73,7 @@ export const Header = () => {
                             <Link to='/' className={'main-header-component-section2-div-link' + isSelected("/")}>{t('menu_header.index')}</Link>
                             <Link to='/projects' className={'main-header-component-section2-div-link' + isSelected("/projects")}>{t('menu_header.projects')}</Link>
                             <Link to='/aboutme' className={'main-header-component-section2-div-link' + isSelected("/aboutme")}>{t('menu_header.aboutme')}</Link>
-                            <Link to='/services' className={'main-header-component-section2-div-link' + isSelected("/services")}>{t('menu_header.services')}</Link>
+                            <Link to='/resume' className={'main-header-component-section2-div-link' + isSelected("/resume")}>{t('menu_header.resume')}</Link>
                             <Link to='/contact' className={'main-header-component-section2-div-link' + isSelected("/contact")}>{t('menu_header.contact')}</Link>
                         </div>
                         <div className='main-header-language-selector'>
