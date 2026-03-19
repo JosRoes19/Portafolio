@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ProjectsView from '../views/ProjectsView/ProjectsView';
-import ServicesView from '../views/ResumeView/ServicesView';
+import ServicesView from '../views/ResumeView/ResumeView';
 
 
 const Index = lazy(() => import('../views/Index/Index'));

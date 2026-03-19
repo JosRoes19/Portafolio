@@ -58,6 +58,11 @@ export const arrow_right_white = {
     alt: 'arrow_right_white'
 }
 
+export const check_white = {
+    url: '/icons/check_white.svg',
+    alt: 'check_white'
+}
+
 export const icon_whatsapp={
     url: '/icons/whatsappBtn.svg',
     alt: 'icon_whatsapp'

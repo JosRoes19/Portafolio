@@ -18,6 +18,8 @@ interface BtnOultinedProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
     customMobileHeight?: string;
     asFocused?: boolean;
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    loading?: boolean;
+    loaderColor?: string;
 }
 
 const BLACKS = [
@@ -42,6 +44,9 @@ export const BtnLined = ({
     customMobileHeight,
     className,
     asFocused,
+    loading = false,
+    loaderColor,
+    disabled,
     ...props
 }: BtnOultinedProps) => {
     const navigate = useNavigate();
@@ -50,31 +55,97 @@ export const BtnLined = ({
     const height = (isMobile ? customMobileHeight : customHeight) ?? "fit-content";
     const [hover, setHover] = useState(false);
 
+    const getLoaderColor = () => {
+        if (loaderColor) return loaderColor;
+        if (hover && !asFocused) {
+            return hoverColor ?? (BLACKS.includes(customColor ?? "#ffffff") ? "#ffffff" : "#000000");
+        }
+        return customColor ?? "#ffffff";
+    };
+
+    const renderRightElement = () => {
+        if (loading) {
+            return (
+                <div className="btn-lined-loader" style={{ borderColor: `${getLoaderColor()} transparent transparent transparent` }}>
+                    <div style={{ borderColor: `${getLoaderColor()} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${getLoaderColor()} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${getLoaderColor()} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${getLoaderColor()} transparent transparent transparent` }}></div>
+                </div>
+            );
+        }
+        
+        if (!noIcon) {
+            let iconSource;
+            if (hover && hoverIcon) {
+                iconSource = hoverIcon;
+            } else if (customIcon) {
+                iconSource = customIcon;
+            } else {
+                iconSource = arrow_right;
+            }
+            
+            return (
+                <img 
+                    src={iconSource.url} 
+                    alt={iconSource.alt} 
+                    style={{ filter: (hover && !hoverIcon) ? "invert(1)" : (asFocused ? "invert(1)" : "invert(0)") }} 
+                />
+            );
+        }
+        
+        return null;
+    };
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (loading || disabled) return;
+        if (to) {
+            navigate(to);
+        } else if (onClick) {
+            onClick(e);
+        }
+    };
+
     if (asFocused) {
-        return <button
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            className={"component-btn-lined as-focuse " + (className ?? "")}
-            onClick={(e) => { !!to ? navigate(to) : (onClick && onClick(e)) }}
-            style={{ "--custom-color": customColor ?? "#ffffff", "--custom-text": hoverColor ?? (BLACKS.includes(customColor ?? "#ffffff") ? "#ffffff" : "#000000"), width, height } as React.CSSProperties}
-            {...props}
-        >
-            <span>{text}</span>
-            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : hoverIcon) ?? arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(1)" }} /> }
-        </button>
+        return (
+            <button
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                className={`component-btn-lined as-focuse ${loading ? 'loading' : ''} ${className ?? ''}`}
+                onClick={handleClick}
+                disabled={disabled || loading}
+                style={{ 
+                    "--custom-color": customColor ?? "#ffffff", 
+                    "--custom-text": hoverColor ?? (BLACKS.includes(customColor ?? "#ffffff") ? "#ffffff" : "#000000"), 
+                    width, 
+                    height,
+                    cursor: loading ? 'wait' : 'pointer'
+                } as React.CSSProperties}
+                {...props}
+            >
+                <span>{loading ? 'Enviando...' : text}</span>
+                {renderRightElement()}
+            </button>
+        );
     }
 
     return (
         <button
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className={"component-btn-lined " + (className ?? "")}
-            onClick={(e) => { !!to ? navigate(to) : (onClick && onClick(e)) }}
-            style={{ "--custom-color": customColor ?? "#ffffff", "--custom-text": hoverColor ?? (BLACKS.includes(customColor ?? "#ffffff") ? "#ffffff" : "#000000"), width, height } as React.CSSProperties}
+            className={`component-btn-lined ${loading ? 'loading' : ''} ${className ?? ''}`}
+            onClick={handleClick}
+            disabled={disabled || loading}
+            style={{ 
+                "--custom-color": customColor ?? "#ffffff", 
+                "--custom-text": hoverColor ?? (BLACKS.includes(customColor ?? "#ffffff") ? "#ffffff" : "#000000"), 
+                width, 
+                height,
+                cursor: loading ? 'wait' : 'pointer'
+            } as React.CSSProperties}
             {...props}
         >
-            <span>{text}</span>
-            { !noIcon && <img src={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? arrow_right).url} alt={(((hover && !!hoverIcon) ? hoverIcon : customIcon) ?? arrow_right).alt} style={{ filter: (hover && !hoverIcon) ? "invert(1)": "invert(0)" }} /> }
+            <span>{loading ? 'Enviando...' : text}</span>{renderRightElement()}
         </button>
     );
-}
+};

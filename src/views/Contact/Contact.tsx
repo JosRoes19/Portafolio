@@ -1,11 +1,10 @@
-import { BannerContact } from "./BannerContact/BannerContact";
-import { FormContact } from "./FormContact/FormContact";
+import BannerContact from './BannerContact/BannerContact';
+
 
 export const Contact = () => {
     return(
         <>
             <BannerContact/>
-            <FormContact/>
         </>
     )
 }

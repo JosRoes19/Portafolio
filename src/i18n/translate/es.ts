@@ -37,7 +37,7 @@ export const language_es = {
       index: "Inicio",
       projects: "Proyectos",
       aboutme: "Sobre Mí",
-      services: "Servicios",
+      resume: "Currículum",
       contact: "Contacto",
    },
    index:{
@@ -256,19 +256,31 @@ export const language_es = {
 
    contact:{
       banner:{
-         title: "CONTACTO",
-         phone1: "+52 (33) 1417 8367",
-         phone2: "+52 (33) 1149 1803",
-         email: "ventas@345.mx",
-         location: "Fray Francisco Frejes 557, Ladrón de Guevara, Guadalajara Jal.",
+         title: "Construyamos nuevos proyectos juntos",
+         subtitle: "¿Tienes un proyecto en mente?"
       },
       form: {
-         title: "CONTÁCTANOS Y COMENCEMOS TU PROYECTO",
          name: "Nombre completo",
          phone: "Teléfono",
          email: "Correo",
-         city: "Ciudad",
-         message: "¿Cómo podemos ayudarte?",
+         message: "¿Colaboramos?",
+         sending: "Enviando",
+         submit: "Enviar",
+         successTitle: "¡Mensaje enviado!",
+         successMessage: "Gracias por contactarme. Te responderé a la mayor brevedad posible.",
+         backHome: "Volver al inicio",
+         placeholder: {
+            name: "Nombre completo",
+            email: "Correo",
+            phone: "Teléfono",
+            message: "Cuéntame sobre tu proyecto...",
+            error: {
+               nameRequired: "El nombre es requerido.",
+               emailRequired: "El correo es requerido.",
+               emailInvalid: "Correo no válido.",
+               messageRequired: "El mensaje es requerido."
+            }
+         }
       }
    },
    header:{
@@ -284,7 +296,7 @@ export const language_es = {
       index: "Inicio",
       projects: "Proyectos",
       aboutme: "Sobre Mí",
-      services: "Servicios",
+      resume: "Currículum",
       contact: "Contacto",
    },
    menu2:{

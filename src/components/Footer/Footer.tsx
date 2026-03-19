@@ -26,7 +26,7 @@ export const Footer = () => {
                     <Link to='/' className='footer-component-header-div2-p'>{t("menu.index")}</Link>
                     <Link to='/projects' className='footer-component-header-div2-p'>{t("menu.projects")}</Link>
                     <Link to='/aboutme' className='footer-component-header-div2-p'>{t("menu.aboutme")}</Link>
-                    <Link to='/services' className='footer-component-header-div2-p'>{t("menu.services")}</Link>
+                    <Link to='/resume' className='footer-component-header-div2-p'>{t("menu.resume")}</Link>
                     <Link to='/contact' className='footer-component-header-div2-p'>{t("menu.contact")}</Link>
                 </Animator>
                 {/* <Animator className='footer-component-header-div3' type={isMobile ? "LeftHorizontal" : "RightHorizontal"}>
