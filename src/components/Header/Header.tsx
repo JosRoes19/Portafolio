@@ -9,7 +9,7 @@ import Animator from "../Animator/Animator";
 
 export const Header = () => {
     const navigate = useNavigate();
-    const {t}  = useTranslation();
+    const { t }  = useTranslation();
     const { isMobile } = useMobile();
     const { pathname } = useLocation();
     const { flag, changeLanguage } = useChangeLang();

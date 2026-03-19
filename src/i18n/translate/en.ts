@@ -280,23 +280,36 @@ export const language_en = {
         }
     },
  
-    contact:{
-        banner:{
-           title: "CONTACT",
-           phone1: "+52 (33) 1417 8367",
-           phone2: "+52 (33) 1149 1803",
-           email: "ventas@345.mx",
-           location: "Fray Francisco Frejes 557, Ladrón de Guevara, Guadalajara Jal.",
-        },
-        form: {
-           title: "CONTACT US AND LET'S START YOUR PROJECT",
-           name: "Full name",
-           phone: "Phone",
-           email: "Email",
-           city: "City",
-           message: "How can we help you?",
-        }
-    },
+    contact: {
+      banner: {
+         title: "Let’s bring your next project to life",
+         subtitle: "Have something in mind?"
+      },
+      form: {
+         name: "Full Name",
+         phone: "Phone Number",
+         email: "Email Address",
+         city: "City",
+         message: "How can we work together?",
+         sending: "Sending...",
+         submit: "Send Message",
+         successTitle: "Your message has been sent!",
+         successMessage: "Thanks for getting in touch. I’ll get back to you as soon as possible.",
+         backHome: "Back to Home",
+         placeholder: {
+            name: "Enter your full name",
+            email: "Enter your email",
+            phone: "Enter your phone number",
+            message: "Tell me a bit about your project...",
+            error: {
+               nameRequired: "Please enter your name.",
+               emailRequired: "Please enter your email address.",
+               emailInvalid: "Please enter a valid email address.",
+               messageRequired: "Please enter a message."
+            }
+         }
+      }
+   },
     header:{
         address: "Fray Francisco Frejes 557, Ladron de Guevara, Guadalajara, Jal.",
         mail: "ventas@345.mx",
