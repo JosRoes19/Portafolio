@@ -12,10 +12,10 @@ export const BannerIndex = () => {
 
     return (
         <section className="section-banner-index" id="section-banner-index">
-                        <video className="container-video" src={isMobile ? "/videos/loop_banner.mp4" : "/videos/loop_banner.mp4"} controls={false} autoPlay muted loop></video>
+            <video className="container-video" src={isMobile ? "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4" : "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4"} autoPlay muted loop playsInline/>
             <div className="container-banner">
                 <Animator type="fade" duration={0.5}>
-                    <BtnLined to='/contact' className='index-banner-button' text={t('index.BtnLined.btnBanner')} customColor='white' customIcon={arrow_right_white} />
+                <BtnLined to='/contact' className='index-banner-button' text={t('index.BtnLined.btnBanner')} customColor='white' customIcon={arrow_right_white} />
                 </Animator>
             </div>
         </section>
