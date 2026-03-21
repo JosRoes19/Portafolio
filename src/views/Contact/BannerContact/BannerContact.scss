@@ -58,6 +58,7 @@
             padding: 0 fonts.px_to_vw(60);
         }
         @include vars.adapted-content-mobile {
+            max-width: 100%;
             padding: 0 fonts.px_to_vw(24, 2);
         }
     }
@@ -74,8 +75,9 @@
     
     h1 {
         @include fonts.family-Graphik-Bold;
-        font-size: fonts.px_to_vw(56);
-        margin-bottom: fonts.px_to_vw(20);
+        font-size: fonts.px_to_vw(40,2);
+        margin-top: fonts.px_to_vw(20,2);
+        margin-bottom: fonts.px_to_vw(20,2);
         text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         
         @include vars.adapted-content-mobile {
