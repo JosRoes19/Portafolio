@@ -72,7 +72,7 @@
     }
 
     .container-banner-title {
-        margin: 0;
+        margin-bottom: fonts.px_to_vw(100, 1);
         padding: 0;
         color: white;
         line-height: 1.02;
@@ -83,12 +83,12 @@
 
         .container-banner-title-line {
             @include fonts.family-Graphik-Black;
-            font-size: fonts.px_to_vw(48, 1);
+            font-size: fonts.px_to_vw(75, 1);
         }
 
         .container-banner-title2-line {
             @include fonts.family-Graphik-Bold;
-            font-size: fonts.px_to_vw(42, 1);
+            font-size: fonts.px_to_vw(65, 1);
         }
 
         @include vars.adapted-content-mobile {
@@ -106,22 +106,24 @@
     }
 
     .container-banner-subtitle {
-        margin: 0;
+        margin-bottom: fonts.px_to_vw(100, 1);
         padding: 0;
         color: rgba(255, 255, 255, 0.92);
         @include fonts.family-Graphik-Regular;
         font-size: fonts.px_to_vw(20, 1);
         line-height: 1.25;
+        max-width: fonts.px_to_vw(700, 1);
 
         @include vars.adapted-content-mobile {
             font-size: fonts.px_to_vw(16, 2);
             line-height: 1.3;
+            max-width: fonts.px_to_vw(500, 2);
         }
     }
 
     .container-banner-title-line,
     .container-banner-title2-line {
-        display: block; // hace que queden en líneas separadas (3 líneas en total)
+        display: block;
     }
 
     .index-banner-button {
