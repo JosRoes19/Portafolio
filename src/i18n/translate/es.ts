@@ -42,9 +42,10 @@ export const language_es = {
    },
    index:{
       banner:{
-         title: 'CONSTRUYENDO EL FUTURO CON INGENIERÍA DE PRECISIÓN.',
-         subtitle: 'INGENIERÍA DE PRECISIÓN',
-         subtitle2: 'PROYECTOS EJECUTIVOS',
+         title: 'Hola, soy José Luis Rodríguez',
+         title2: 'Desarrollador Web Fullstack',
+         subtitle: 'Desarrollador Web Fullstack',
+         subtitle2: 'Ingeniero en Desarrollo de Software apasionado por crear soluciones modernas, funcionales y centradas en el usuario.',
          subtitle3: 'PUNTUALIDAD Y EFICIENCIA',
          informative_text1: 'Aplicamos los principios de la ingeniería para garantizar estructuras seguras, funcionales y eficientes.',
          informative_text2: 'En 345 INGENIERÍA nos especializamos en el desarrollo de proyectos ejecutivos de alto nivel.',

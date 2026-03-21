@@ -8,13 +8,12 @@
     overflow: hidden;
     
     @include vars.adapted-content-web {
-        padding: fonts.px_to_vw(120) 0;
+        padding: fonts.px_to_vw(100, 1) 0;
     }
     @include vars.adapted-content-mobile {
         padding: fonts.px_to_vw(100, 2) 0 fonts.px_to_vw(60, 2);
     }
 
-    // Video de fondo
     .banner-contact-video {
         position: absolute;
         top: 0;
@@ -36,7 +35,6 @@
         }
     }
 
-    // Overlay oscuro
     .banner-contact-overlay {
         position: absolute;
         top: 0;
@@ -47,7 +45,7 @@
         z-index: 2;
     }
 
-    // Contenido
+
     .banner-contact-content {
         position: relative;
         z-index: 3;
@@ -81,19 +79,23 @@
         text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         
         @include vars.adapted-content-mobile {
-            font-size: fonts.px_to_vw(42, 2);
+            margin-top: fonts.px_to_vw(15, 2);
+            margin-bottom: fonts.px_to_vw(20, 2);
+            font-size: fonts.px_to_vw(30, 2);
         }
     }
     
     p {
         @include fonts.family-Graphik-Regular;
-        font-size: fonts.px_to_vw(20);
+        font-size: fonts.px_to_vw(25, 1);
         color: rgba(255, 255, 255, 0.9);
         max-width: fonts.px_to_vw(700);
         margin: 0 auto;
         text-shadow: 0 1px 5px rgba(0,0,0,0.2);
         
         @include vars.adapted-content-mobile {
+            max-width: fonts.px_to_vw(300, 2);
+            margin-bottom: fonts.px_to_vw(-15, 2);
             font-size: fonts.px_to_vw(18, 2);
         }
     }
