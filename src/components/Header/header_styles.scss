@@ -7,7 +7,7 @@
 
 header.main-header-component {
     box-sizing: border-box;
-    z-index: 9999999999999;
+    z-index: 999;
     width: 100%;
     position: sticky;
     top: 0;
@@ -22,9 +22,9 @@ header.main-header-component {
         left: 0;
         background-color: #383A42;
         height: auto;
-        min-height: 10vw;
+        min-height: fonts.px_to_vw(10,2);
         padding: fonts.px_to_vw(20, 2) fonts.px_to_vw(42, 2);
-        padding-top: fonts.px_to_vw(40, 2);
+        padding-top: fonts.px_to_vw(20, 2);
     }
 
     // Versión móvil del header
@@ -168,6 +168,7 @@ header.main-header-component {
             align-items: center;
             justify-content: end;
             padding-right: fonts.px_to_vw(40,1);
+            margin-top: fonts.px_to_vw(15,1);
             @include fonts.family-Graphik-Semibold;
             @include vars.adapted-content-web {
                 gap: fonts.px_to_vw(44, 1);
@@ -322,7 +323,7 @@ header.main-header-component {
     .main-header-menu-component-mobile-links {
         display: flex;
         flex-direction: column;
-        margin-bottom: fonts.px_to_vw(40, 2);
+        margin-bottom: fonts.px_to_vw(20, 2);
         gap: fonts.px_to_vw(5, 2);
 
         .main-header-menu-component-mobile-link {
