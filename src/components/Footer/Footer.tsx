@@ -15,7 +15,7 @@ export const Footer = () => {
 
     return (
       <>
-        {!location.pathname.startsWith("/contact") && !location.pathname.startsWith("/terms-conditions") && !location.pathname.startsWith("/privacy") } /* && {/*<ContactForm> */} */ 
+        {!location.pathname.startsWith("/contact") && !location.pathname.startsWith("/terms-conditions") && !location.pathname.startsWith("/privacy") } {/*<ContactForm> */}
         <footer className="footer-component">
             <header className='footer-component-header'> 
                 <Animator type={isMobile ? "fade" : "LeftHorizontal"} className='footer-component-header-div1' parentFlex>
