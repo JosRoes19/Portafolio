@@ -10,6 +10,20 @@
     alt: 'construction-mobile'
 } */
 
+export const ReactLogo = {
+    url: '/imgs/Index/ReactLogo.webp',
+    alt: 'ReactLogo'
+}
+
+export const AngularLogo = {
+    url: '/imgs/Index/AngularLogo.webp',
+    alt: 'AngularLogo'
+}
+
+export const LaravelLogo = {
+    url: '/imgs/Index/LaravelLogo.webp',
+    alt: 'LaravelLogo'
+}
 
 export const icon_header_location = {
     url: '/imgs/Header/icon_header_location.svg',

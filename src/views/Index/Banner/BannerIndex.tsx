@@ -24,11 +24,12 @@ export const BannerIndex = () => {
                                 {t("index.banner.title2")}
                             </span>
                         </h1>
-                        <h2 className="container-banner-subtitle">{t("index.banner.subtitle2")}</h2>
+                        <h2 className="container-banner-subtitle">{t("index.banner.subtitle")}</h2>
                     </div>
                 </Animator>
                 <Animator type="fade" duration={0.5} delay={0.2}>
                     <BtnLined to='/contact' className='index-banner-button' text={t('index.BtnLined.btnBanner')} customColor='white' customIcon={arrow_right_white} />
+                    <BtnLined to='/contact' className='index-banner-button' text={t('index.BtnLined.btnBannerResume')} customColor='white' customIcon={arrow_right_white} />
                 </Animator>
             </div>
         </section>

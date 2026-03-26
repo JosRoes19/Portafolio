@@ -44,15 +44,15 @@ export const language_es = {
       banner:{
          title: 'Hola, soy José Luis Rodríguez',
          title2: 'Desarrollador Web Fullstack',
-         subtitle: 'Desarrollador Web Fullstack',
-         subtitle2: 'Ingeniero en Desarrollo de Software apasionado por crear soluciones modernas, funcionales y centradas en el usuario.',
-         subtitle3: 'PUNTUALIDAD Y EFICIENCIA',
-         informative_text1: 'Aplicamos los principios de la ingeniería para garantizar estructuras seguras, funcionales y eficientes.',
-         informative_text2: 'En 345 INGENIERÍA nos especializamos en el desarrollo de proyectos ejecutivos de alto nivel.',
-         informative_text3: 'Respetamos los tiempos de entrega con una planificación eficiente y ejecución precisa.'
+         subtitle: 'Ingeniero en Desarrollo de Software apasionado por crear soluciones modernas, funcionales y centradas en el usuario.',
+      },
+      content:{
+         content_title: 'Soy desarrollador web con experiencia en tecnologías modernas como React, Angular y Node.js. Me enfoco en construir aplicaciones eficientes, escalables y con una excelente experiencia de usuario.',
+         content_subtitle: '',
       },
       BtnLined: {
-         btnBanner: "Construyamos nuevos proyectos juntos."
+         btnBanner: "Construyamos nuevos proyectos juntos.",
+         btnBannerResume: "Curriculum",
       },
    },
    about_us:{
