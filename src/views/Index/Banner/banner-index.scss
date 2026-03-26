@@ -241,9 +241,18 @@
         gap: fonts.px_to_vw(16, 1);
         
         @include vars.adapted-content-mobile {
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: fonts.px_to_vw(12, 2);
-            width: 100%;
+            width: 80%;
+            margin: 0 auto;
+            justify-items: center;
+            
+            .tech-card-item {
+                width: auto;
+                min-width: fonts.px_to_vw(100, 2);
+                justify-content: center;
+            }
         }
     }
 }
