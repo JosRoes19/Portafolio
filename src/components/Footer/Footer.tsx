@@ -1,55 +1,59 @@
 import { useTranslation } from "react-i18next";
-import { /* href, */ Link, useLocation } from "react-router-dom";
-import './footer.scss'
+import { Link, useLocation } from "react-router-dom";
+import './footer.scss';
 import useMobile from "../../hooks/useMobile";
 import Animator from "../Animator/Animator";
-import {  } from '../../data/img/img-data'; //iconos o imagenes, tanto mobiles o web
-//import { ContactForm } from '../../components/ContactForm/ContactForm';
-
+import { linkedin, gitHubLogo, terminal_logo } from '../../data/img/img-data';
 
 export const Footer = () => {
     const location = useLocation();
     const { t } = useTranslation();
-   /*  const redirectToExternalLink = (href: string) => window.open(href, '_blank'); */
-    const  { isMobile }  = useMobile();
+    const { isMobile } = useMobile();
+
+    const redirectToExternalLink = (href: string) => window.open(href, '_blank');
+
+    // Si no estás en estas rutas, muestra el footer
+    if (location.pathname.startsWith("/contact")) {
+        return null;
+    }
 
     return (
-      <>
-        {!location.pathname.startsWith("/contact") && !location.pathname.startsWith("/terms-conditions") && !location.pathname.startsWith("/privacy") } /* && {/*<ContactForm> */} */ 
         <footer className="footer-component">
-            <header className='footer-component-header'> 
-                <Animator type={isMobile ? "fade" : "LeftHorizontal"} className='footer-component-header-div1' parentFlex>
-                    {/* <img src={""} alt={""} className='footer-component-header-div1-img1'/> */}
-                    <p>Aqui va una imagen</p>
+            <div className="footer-container">
+                {/* Logo y derechos */}
+                <Animator type={isMobile ? "fade" : "LeftHorizontal"} className="footer-left">
+                    <div className="footer-logo">
+                        <img className="footer-logo-text" src={terminal_logo.url} alt={terminal_logo.alt} />
+                    </div>
+                    <div className="footer-copyright">
+                    </div>
                 </Animator>
-                <Animator className='footer-component-header-div2' type={isMobile ? "LeftHorizontal" : "RightHorizontal"}>
-                    <Link to='/' className='footer-component-header-div2-p'>{t("menu.index")}</Link>
-                    <Link to='/projects' className='footer-component-header-div2-p'>{t("menu.projects")}</Link>
-                    <Link to='/aboutme' className='footer-component-header-div2-p'>{t("menu.aboutme")}</Link>
-                    <Link to='/resume' className='footer-component-header-div2-p'>{t("menu.resume")}</Link>
-                    <Link to='/contact' className='footer-component-header-div2-p'>{t("menu.contact")}</Link>
-                </Animator>
-                {/* <Animator className='footer-component-header-div3' type={isMobile ? "LeftHorizontal" : "RightHorizontal"}>
-                    <Link to='/terms-conditions'>{t("menu2.conditions")}</Link>
-                    <Link to='/privacy'>{t("menu2.privacy")}</Link>
-                </Animator> */}
-                <Animator className='footer-component-header-div4' type={isMobile ? "fade" : "RightHorizontal"} >
-                        {/* <img onClick={() => redirectToExternalLink("https://mx.linkedin.com/")} src={""} alt={""} className='footer-component-header-div4-img'/> */}
-                        <p>Aqui van imagenes</p>
-                </Animator>
-            </header>
-            <section className='footer-component-section'>
-                {/* <Animator type={isMobile ? "fade" : "LeftHorizontal"} parentFlex>
-                    <p>{t("footer.year")}</p>
-                </Animator> */}
-                <Animator type={isMobile ? "fade" : "RightHorizontal"}>
-                    <a href="" target="_blank" rel="" className="">
-                        {/* <img src="" alt=""/> */}
-                    </a>
-                </Animator>            
-            </section>
-        </footer>
-      </>  
-    );
 
-}
+                <Animator type={isMobile ? "fade" : "RightHorizontal"} className="footer-right">
+                    <div className="footer-social">
+                        <a href="https://github.com/JosRoes19" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
+                            <img src={gitHubLogo.url} alt={gitHubLogo.alt} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/josroes/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
+                            <img src={linkedin.url} alt={linkedin.alt} />
+                        </a>
+                    </div>
+                </Animator>
+            </div>
+
+            <div className="footer-nav">
+                <Animator type="fade" className="footer-nav-links">
+                    <Link to='/' className="footer-nav-link">{t("menu.index")}</Link>
+                    <span className="footer-nav-separator">|</span>
+                    <Link to='/projects' className="footer-nav-link">{t("menu.projects")}</Link>
+                    <span className="footer-nav-separator">|</span>
+                    <Link to='/aboutme' className="footer-nav-link">{t("menu.aboutme")}</Link>
+                    <span className="footer-nav-separator">|</span>
+                    <Link to='/resume' className="footer-nav-link">{t("menu.resume")}</Link>
+                    <span className="footer-nav-separator">|</span>
+                    <Link to='/contact' className="footer-nav-link">{t("menu.contact")}</Link>
+                </Animator>
+            </div>
+        </footer>
+    );
+};

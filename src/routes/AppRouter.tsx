@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ProjectsView from '../views/ProjectsView/ProjectsView';
-import ServicesView from '../views/ResumeView/ResumeView';
+import  ResumeView from '../views/ResumeView/ResumeView';
 
 
 const Index = lazy(() => import('../views/Index/Index'));
@@ -19,7 +19,7 @@ export const AppRouter = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/aboutme' element={<AboutMe />} />
           <Route path='/projects' element={<ProjectsView />} />
-          <Route path='/services' element={<ServicesView />} />
+          <Route path='/resume' element={<ResumeView />} />
     </Routes>
   );
 };

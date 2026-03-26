@@ -40,30 +40,16 @@ export const language_en = {
       contact: "Contact",
     },
     index:{
-       banner:{
-          title: 'BUILDING THE FUTURE WITH PRECISION ENGINEERING.',
-       },
-      informative:{
-         informative_title: 'WE TURN IDEAS INTO STRUCTURES THAT TRANSCEND',
-         informative_subtitle: 'We are a company with reach in all Mexico, specialized in engineering, construction and development of executive projects for infrastructures, buildings and civil works of high impact.',
-         informative_text1: 'Our experience allows us to offer integral solutions, from planning and design to execution and supervision, guaranteeing efficient, safe and sustainable projects.',
-
+      banner:{
+         title: 'Hello, I am José Luis Rodríguez',
+         title2: 'Fullstack Developer',
+         subtitle: 'Software Engineer passionate about creating modern, functional and user-centered solutions.',
       },
-      our_solutions:{
-         title: "OUR SOLUTIONS",
-         description: "Our experience allows us to offer integral solutions, from planning and design to execution and supervision, guaranteeing efficient, safe and sustainable projects.",
-         text1:"INDUSTRIAL SOLUTIONS",
-         text2:"COMMERCIAL SOLUTIONS",
-         text3:"In 345 ENGINEERING, we design and execute commercial projects tailored to the needs of each business.",
-         text4:"COLLECTION OF RAINWATER",
-         text5:"We design safe and efficient industrial infrastructure to drive productivity and growth.",
-         text6:"We optimize spaces to improve functionality, efficiency and user experience in commercial projects.",
-         text7:"We implement sustainable solutions to collect and use rainwater, reducing costs and consumption of water resources."
+      BtnLined: {
+         btnBanner: "Let's build new projects together.",
+         btnBannerResume: "Resume",
       },
-
-      building_the_future:{
-         title: "BUILDING THE FUTURE WITH PRECISION"
-      },
+      
 
       solutions_to_the_measure:{
          title: "CUSTOMIZED SOLUTIONS",
@@ -79,7 +65,7 @@ export const language_en = {
       comprometidos: {
          title: "COMMITTED TO YOUR PROJECT"
       },
-    },
+   },
     about_us:{
        banner:{
           banner_title: "WHERE ENGINEERING BECOMES GREATNESS",
