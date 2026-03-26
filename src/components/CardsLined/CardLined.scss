@@ -1,0 +1,40 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+.tech-card-item {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: fonts.px_to_vw(40, 1);
+    padding: fonts.px_to_vw(10, 1) fonts.px_to_vw(18, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: fonts.px_to_vw(10, 1);
+    
+    @include vars.adapted-content-mobile {
+        padding: fonts.px_to_vw(8, 2) fonts.px_to_vw(14, 2);
+        border-radius: fonts.px_to_vw(30, 2);
+        gap: fonts.px_to_vw(8, 2);
+    }
+    
+    .tech-icon {
+        width: fonts.px_to_vw(24, 1);
+        height: fonts.px_to_vw(24, 1);
+        object-fit: contain;
+        
+        @include vars.adapted-content-mobile {
+            width: fonts.px_to_vw(20, 2);
+            height: fonts.px_to_vw(20, 2);
+        }
+    }
+    
+    .tech-name {
+        color: white;
+        @include fonts.family-Graphik-Regular;
+        font-size: fonts.px_to_vw(14, 1);
+        
+        @include vars.adapted-content-mobile {
+            font-size: fonts.px_to_vw(12, 2);
+        }
+    }
+}

@@ -14,13 +14,13 @@ header.main-header-component {
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: #383A42;
+    background-color: #0a0a0a;
     @include fonts.family-Graphik-Regular;
 
     @include vars.adapted-content-mobile {
         position: fixed;
         left: 0;
-        background-color: #383A42;
+        background-color: #101010;
         height: auto;
         min-height: fonts.px_to_vw(10,2);
         padding: fonts.px_to_vw(20, 2) fonts.px_to_vw(42, 2);
@@ -166,7 +166,7 @@ header.main-header-component {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: end;
+            justify-content: center;
             padding-right: fonts.px_to_vw(40,1);
             margin-top: fonts.px_to_vw(15,1);
             @include fonts.family-Graphik-Semibold;
@@ -186,12 +186,12 @@ header.main-header-component {
                 }
 
                 &:hover {
-                    border-bottom: 2px solid white;
+                    border-bottom: 2px solid #9AF5FE;
                 }
             }
 
             > *.selected {
-                color: #3052DD;
+                color: #9AF5FE;
                 @include vars.adapted-content-web {
                     border-bottom: 2px solid transparent;
                 }
@@ -337,12 +337,12 @@ header.main-header-component {
             border-bottom: 2px solid transparent;
             
             &:hover {
-                color: #3052DD;
-                border-bottom-color: #3052DD;
+                color: #9AF5FE;
+                border-bottom-color: #9AF5FE;
             }
             
             &.selected {
-                color: #3052DD;
+                color: #9AF5FE;
                 font-weight: bold;
             }
         }

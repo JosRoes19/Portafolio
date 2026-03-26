@@ -52,7 +52,7 @@ export const language_es = {
       },
       BtnLined: {
          btnBanner: "Construyamos nuevos proyectos juntos.",
-         btnBannerResume: "Curriculum",
+         btnBannerResume: "Currículum",
       },
    },
    about_us:{
