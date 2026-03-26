@@ -25,6 +25,11 @@ export const LaravelLogo = {
     alt: 'LaravelLogo'
 }
 
+export const NodeJsLogo = {
+    url: '/imgs/Index/NodeJsLogo.webp',
+    alt: 'NodeJsLogo'
+}
+
 export const icon_header_location = {
     url: '/imgs/Header/icon_header_location.svg',
     alt: 'iconLocation'
@@ -81,14 +86,6 @@ export const icon_whatsapp={
     url: '/icons/whatsappBtn.svg',
     alt: 'icon_whatsapp'
 }
-export const icon_whatsapp_black={
-    url: '/icons/icon_whatsapp_black.svg',
-    alt: 'icon_whatsapp_black'
-}
-export const icon_mail_black={
-    url: '/icons/icon_mail_black.svg',
-    alt: 'icon_mail_black'
-}
 export const icon_location_black={
     url: '/icons/icon_location_black.svg',
     alt: 'icon_location_black'
@@ -113,6 +110,16 @@ export const flag_mx={
 export const flag_usa={
     url: '/icons/flag_usa.svg',
     alt: 'flag_usa'
+}
+
+export const linkedin = {
+    url: '/icons/linkedin.svg',
+    alt: 'linkedin'
+}
+
+export const gitHubLogo = {
+    url: '/icons/GithubLogo.svg',
+    alt: 'gitHubLogo'
 }
 
 //videos

@@ -46,7 +46,8 @@ export const language_en = {
          subtitle: 'Software Engineer passionate about creating modern, functional and user-centered solutions.',
       },
       BtnLined: {
-         btnBanner: "Let's build new projects together."
+         btnBanner: "Let's build new projects together.",
+         btnBannerResume: "Resume",
       },
       
 

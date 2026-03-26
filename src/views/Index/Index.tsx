@@ -8,7 +8,7 @@ export const Index = () => {
     return(
         <>
             <BannerIndex/>
-            <ContentIndex/>
+            {/* <ContentIndex/> */}
         </>
     )
 }
