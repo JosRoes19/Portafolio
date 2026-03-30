@@ -33,7 +33,7 @@ export const BannerIndex = () => {
                                 {t("index.banner.title2")}
                             </span>
                         </h1>
-                        <h2 className="container-banner-subtitle">{t("index.banner.subtitle")}</h2>
+                        {<h2 className="container-banner-subtitle">{t("index.banner.subtitle")}</h2>}
                     </div>
                 </Animator>
                 <Animator type="LeftHorizontal" duration={0.5} delay={0.2}>
