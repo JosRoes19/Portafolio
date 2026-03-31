@@ -10,11 +10,28 @@
     display: flex;
     align-items: center;
     gap: fonts.px_to_vw(10, 1);
+    text-decoration: none;
+    cursor: default;
+    transition: all 0.3s ease;
     
     @include vars.adapted-content-mobile {
         padding: fonts.px_to_vw(8, 2) fonts.px_to_vw(14, 2);
         border-radius: fonts.px_to_vw(30, 2);
         gap: fonts.px_to_vw(8, 2);
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: #9AF5FE;
+        background: rgba(154, 245, 254, 0.1);
+        
+        .tech-name {
+            color: #9AF5FE;
+        }
+        
+        .tech-user {
+            color: rgba(154, 245, 254, 0.8);
+        }
     }
     
     .tech-icon {
@@ -27,6 +44,16 @@
             height: fonts.px_to_vw(20, 2);
         }
     }
+
+    .tech-info {
+        display: flex;
+        flex-direction: column;
+        gap: fonts.px_to_vw(2, 1);
+        
+        @include vars.adapted-content-mobile {
+            gap: fonts.px_to_vw(1, 2);
+        }
+    }
     
     .tech-name {
         color: white;
@@ -37,4 +64,18 @@
             font-size: fonts.px_to_vw(12, 2);
         }
     }
+
+    .tech-user {
+        color: rgba(255, 255, 255, 0.6);
+        @include fonts.family-Graphik-Regular;
+        font-size: fonts.px_to_vw(11, 1);
+        
+        @include vars.adapted-content-mobile {
+            font-size: fonts.px_to_vw(10, 2);
+        }
+    }
+}
+
+a.tech-card-item {
+    cursor: pointer;
 }

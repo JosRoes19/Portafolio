@@ -18,7 +18,6 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: fonts.px_to_vw(24);
     padding: fonts.px_to_vw(50);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     
     @include vars.adapted-content-mobile {
         padding: fonts.px_to_vw(30, 2);
@@ -51,6 +50,7 @@
         
         @include vars.adapted-content-mobile {
             font-size: fonts.px_to_vw(14, 2);
+            margin-bottom: fonts.px_to_vw(10, 2);
         }
     }
     
@@ -125,7 +125,8 @@
     margin-top: fonts.px_to_vw(20);
     
     @include vars.adapted-content-mobile {
-        justify-content: center;
+        justify-content: flex-end;
+        margin-top: fonts.px_to_vw(25, 2);
     }
     
     .form-contact-submit-btn {
@@ -135,21 +136,44 @@
         }
         
         @include vars.adapted-content-mobile {
-            width: 100%;
+            width: auto;
+            min-width: fonts.px_to_vw(140, 2);
             justify-content: center;
+            font-size: fonts.px_to_vw(14, 2) !important;
+            padding: fonts.px_to_vw(12, 2) fonts.px_to_vw(28, 2) !important;
+            border-radius: fonts.px_to_vw(34, 2);
         }
     }
 }
 
+
+
 .form-contact-success-card {
     text-align: center;
-    max-width: fonts.px_to_vw(600);
+    max-width: fonts.px_to_vw(1500, 1);
     margin: 0 auto;
+    background: rgba(56, 58, 66, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: fonts.px_to_vw(24);
+    padding: fonts.px_to_vw(50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include vars.adapted-content-mobile{
+        max-width: 100%;
+        padding: fonts.px_to_vw(40, 2) fonts.px_to_vw(30, 2);
+        border-radius: fonts.px_to_vw(20, 2);
+        margin: 0 fonts.px_to_vw(16, 2);
+        padding-bottom: fonts.px_to_vw(40, 2);
+        align-items: center;
+    }
     
     .form-contact-success-icon {
-        width: fonts.px_to_vw(80);
-        height: fonts.px_to_vw(80);
-        margin-bottom: fonts.px_to_vw(30);
+        width: fonts.px_to_vw(80, 1);
+        height: fonts.px_to_vw(80, 1);
+        margin-bottom: fonts.px_to_vw(30, 1);
         
         @include vars.adapted-content-mobile {
             width: fonts.px_to_vw(60, 2);
@@ -162,9 +186,11 @@
         font-size: fonts.px_to_vw(36);
         color: white;
         margin-bottom: fonts.px_to_vw(15);
+        width: 100%;
         
         @include vars.adapted-content-mobile {
             font-size: fonts.px_to_vw(28, 2);
+            margin-bottom: fonts.px_to_vw(20, 2)
         }
     }
     
@@ -176,11 +202,13 @@
         
         @include vars.adapted-content-mobile {
             font-size: fonts.px_to_vw(18, 2);
+            margin-bottom: fonts.px_to_vw(20, 2)
         }
     }
     
     .form-contact-back-btn {
         @include vars.adapted-content-web {
+            align-items: end;
             font-size: fonts.px_to_vw(16) !important;
             padding: fonts.px_to_vw(12) fonts.px_to_vw(32) !important;
         }

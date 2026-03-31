@@ -2,11 +2,19 @@ import { useTranslation } from "react-i18next";
 import useMobile from "../../../hooks/useMobile";
 import Animator from "../../../components/Animator/Animator";
 import FormContact from "../FormContact/FormContact";
+import { CardsLined } from "../../../components/CardsLined/CardLined"
 import "./BannerContact.scss";
+import { gitHubLogo, linkedin } from "../../../data/img/img-data";
+import { redirect } from "react-router-dom";
 
 const BannerContact = () => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
+
+    const plataforms = [
+        {name: "Linkedin", icon: linkedin, user: "@Josroes", redirect: "https://www.linkedin.com/in/josroes/"},
+        {name: "GitHub", icon: gitHubLogo, user: "JosRoes19", redirect: "https://github.com/JosRoes19/Portafolio"}
+    ];
 
     return (
         <section className="banner-contact" id="banner-contact">
@@ -14,16 +22,26 @@ const BannerContact = () => {
             <div className="banner-contact-overlay" />
 
             <div className="banner-contact-content">
-                <Animator type="fade" duration={0.5}>
-                    <div className="banner-contact-header">
-                        <h1>{t('contact.banner.title')}</h1>
-                        <p>{t('contact.banner.subtitle')}</p>
-                    </div>
-                </Animator>
+                <div className="banner-contact-grid">
+                    <Animator type="LeftHorizontal" duration={0.5} className="banner-contact-left">
+                        <div className="banner-contact-header">
+                            <p>{t('contact.banner.p')}</p>
+                            <h1>{t('contact.banner.title')}</h1>
+                            <h2>{t('contact.banner.subtitle')}</h2>
+                            <p>{t('contact.banner.p2')}</p>
+                            <p>{t('contact.banner.p3')}</p>
+                        </div>
+                        <div className="tech-cards-horizontal ">
+                            {plataforms.map((plat, index) => (
+                                <CardsLined key={index} name={plat.name} icon={plat.icon} user={plat.user} redirect={plat.redirect}/>
+                            ))}
+                        </div>
+                    </Animator>
 
-                <Animator type="fade" delay={0.2} duration={0.5}>
-                    <FormContact />
-                </Animator>
+                    <Animator type="RightHorizontal" duration={0.5} delay={0.2} className="banner-contact-right">
+                        <FormContact />
+                    </Animator>
+                </div>
             </div>
         </section>
     );
