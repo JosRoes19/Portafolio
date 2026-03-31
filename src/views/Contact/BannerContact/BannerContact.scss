@@ -45,11 +45,10 @@
         z-index: 2;
     }
 
-
     .banner-contact-content {
         position: relative;
         z-index: 3;
-        max-width: fonts.px_to_vw(1200);
+        max-width: fonts.px_to_vw(1800);
         margin: 0 auto;
         
         @include vars.adapted-content-web {
@@ -60,43 +59,129 @@
             padding: 0 fonts.px_to_vw(24, 2);
         }
     }
-}
 
-.banner-contact-header {
-    text-align: center;
-    margin-bottom: fonts.px_to_vw(50);
-    color: white;
-    
-    @include vars.adapted-content-mobile {
-        margin-bottom: fonts.px_to_vw(40, 2);
-    }
-    
-    h1 {
-        @include fonts.family-Graphik-Bold;
-        font-size: fonts.px_to_vw(40,1);
-        margin-top: fonts.px_to_vw(20,1);
-        margin-bottom: fonts.px_to_vw(30,1);
-        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    .banner-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: fonts.px_to_vw(60, 1);
+        align-items: center;
         
         @include vars.adapted-content-mobile {
-            margin-top: fonts.px_to_vw(15, 2);
-            margin-bottom: fonts.px_to_vw(20, 2);
-            font-size: fonts.px_to_vw(30, 2);
+            grid-template-columns: 1fr;
+            gap: fonts.px_to_vw(40, 2);
         }
     }
-    
-    p {
-        @include fonts.family-Graphik-Regular;
-        font-size: fonts.px_to_vw(25, 1);
-        color: rgba(255, 255, 255, 0.9);
-        max-width: fonts.px_to_vw(700);
-        margin: 0 auto;
-        text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+
+    // Columna izquierda - Texto
+    .banner-contact-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tech-cards-horizontal {
+        display: flex;
+        flex-direction: row;
+        gap: fonts.px_to_vw(16, 1);
+        margin-top: fonts.px_to_vw(20, 1);
+        margin-left: fonts.px_to_vw(50, 1);
+
+        .tech-card-item {
+            justify-content: center;
+            border-radius: fonts.px_to_vw(10, 1);
+        }
+
+        .tech-icon {
+            width: fonts.px_to_vw(30, 1);
+            height: fonts.px_to_vw(30, 1);
+            object-fit: contain;
+
+            @include vars.adapted-content-mobile{
+                width: fonts.px_to_vw(30, 2);
+                height: fonts.px_to_vw(30, 2);
+                object-fit: contain;
+            }
+        }
         
         @include vars.adapted-content-mobile {
-            max-width: fonts.px_to_vw(300, 2);
-            margin-bottom: fonts.px_to_vw(-15, 2);
-            font-size: fonts.px_to_vw(18, 2);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: fonts.px_to_vw(12, 2);
+            width: 80%;
+            margin: 0 auto;
+            justify-items: center;
+            
+            .tech-card-item {
+                width: auto;
+                min-width: fonts.px_to_vw(100, 2);
+                justify-content: center;
+                border-radius: fonts.px_to_vw(10, 2);
+            }
+        }
+    }
+
+    // Columna derecha - Formulario
+    .banner-contact-right {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: fonts.px_to_vw(50, 1);
+        
+        @include vars.adapted-content-mobile {
+            justify-content: center;
+        }
+    }
+
+    .banner-contact-header {
+        text-align: left;
+        color: white;
+        margin-left: fonts.px_to_vw(50, 1);
+        
+        h1 {
+            @include fonts.family-Graphik-Black;
+            font-size: fonts.px_to_vw(56, 1);
+            margin: 0 0 fonts.px_to_vw(20, 1) 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(32, 2);
+                text-align: center;
+                margin-bottom: fonts.px_to_vw(16, 2);
+            }
+        }
+
+        h2 {
+            @include fonts.family-Graphik-Black;
+            font-size: fonts.px_to_vw(56, 1);
+            margin: 0 0 fonts.px_to_vw(20, 1) 0;
+            color:#9AF5FE;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(32, 2);
+                text-align: center;
+                margin-bottom: fonts.px_to_vw(16, 2);
+            }
+        }
+        
+        p {
+            @include fonts.family-Graphik-Regular;
+            font-size: fonts.px_to_vw(20, 1);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: fonts.px_to_vw(500, 1);
+            margin: 0;
+            line-height: 1.4;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            margin-bottom: fonts.px_to_vw(20, 1);
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(16, 2);
+                text-align: center;
+                max-width: 100%;
+                line-height: 1.5;
+                margin-bottom: fonts.px_to_vw(20, 2);
+            }
         }
     }
 }

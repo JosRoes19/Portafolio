@@ -131,7 +131,7 @@ const FormContact = () => {
                         </div>
 
                         <div className="form-contact-button">
-                            <BtnLined type="submit" text={isSubmitting ? (t('contact.form.sending')) : (t('contact.form.submit'))} customColor="white" customIcon={arrow_right_white} disabled={isSubmitting} loading={isSubmitting} className="form-contact-submit-btn"
+                            <BtnLined type="submit" text={isSubmitting ? (t('contact.form.sending')) : (t('contact.form.submit'))} customColor="#9AF5FE" customIcon={arrow_right_white} disabled={isSubmitting} loading={isSubmitting} className="form-contact-submit-btn"
                             />
                         </div>
                     </form>
@@ -141,7 +141,7 @@ const FormContact = () => {
                     <img src={check_white.url} alt={check_white.alt} className="form-contact-success-icon" />
                     <h3>{t('contact.form.successTitle')}</h3>
                     <p>{t('contact.form.successMessage')}</p>
-                    <BtnLined to="/" text={t('contact.form.backHome')} customColor="white" customIcon={arrow_right_white} className="form-contact-back-btn" />
+                    <BtnLined to="/" text={t('contact.form.backHome')} customColor="#9AF5FE" customIcon={arrow_right_white} className="form-contact-back-btn" />
                 </div>
             )}
         </div>
