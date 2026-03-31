@@ -257,8 +257,11 @@ export const language_es = {
 
    contact:{
       banner:{
-         title: "Construyamos nuevos proyectos juntos",
-         subtitle: "¿Tienes un proyecto en mente?"
+         title: "Construyamos nuevos",
+         subtitle: "proyectos juntos",
+         p: "Ponte en contacto",
+         p2: "¿Tienes un proyecto en mente?",
+         p3: "Puedes enviarme un mensaje directamente a través del formulario. También puedes contactarme por correo o LinkedIn."
       },
       form: {
          name: "Nombre completo",
