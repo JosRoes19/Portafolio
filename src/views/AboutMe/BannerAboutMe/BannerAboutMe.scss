@@ -1,0 +1,298 @@
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/fonts.scss" as fonts;
+
+.section-banner-aboutme {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    overflow-x: hidden;
+    
+    @include vars.adapted-content-web {
+        padding: fonts.px_to_vw(120, 1) 0 fonts.px_to_vw(80, 1);
+    }
+    @include vars.adapted-content-mobile {
+        padding: fonts.px_to_vw(100, 2) 0 fonts.px_to_vw(60, 2);
+    }
+    
+    .banner-aboutme-container {
+        position: relative;
+        z-index: 2;
+        max-width: fonts.px_to_vw(1400);
+        margin: 0 auto;
+        
+        @include vars.adapted-content-web {
+            padding: 0 fonts.px_to_vw(80);
+        }
+        @include vars.adapted-content-mobile {
+            padding: 0 fonts.px_to_vw(24, 2);
+        }
+    }
+    
+    // Grid principal con foto a la izquierda
+    .banner-aboutme-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: fonts.px_to_vw(60, 1);
+        align-items: center;
+        margin-bottom: fonts.px_to_vw(100, 1);
+        
+        @include vars.adapted-content-mobile {
+            grid-template-columns: 1fr;
+            gap: fonts.px_to_vw(40, 2);
+            margin-bottom: fonts.px_to_vw(60, 2);
+        }
+    }
+    
+    // Foto con card superpuesta
+    .banner-aboutme-photo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .photo-container {
+        position: relative;
+        width: 100%;
+        max-width: fonts.px_to_vw(380);
+        aspect-ratio: 1;
+        
+        @include vars.adapted-content-mobile {
+            max-width: fonts.px_to_vw(280, 2);
+            margin: 0 auto;
+        }
+        
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            filter: grayscale(20%);
+            transition: all 0.5s ease;
+            
+            &:hover {
+                filter: grayscale(0%);
+                transform: scale(1.02);
+            }
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(154, 245, 254, 0.1) 0%, transparent 50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        // Card superpuesta encima de la foto
+        .experience-card-overlay {
+            position: absolute;
+            bottom: fonts.px_to_vw(10, 1);
+            right: fonts.px_to_vw(5, 1);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(154, 245, 254, 0.3);
+            border-radius: fonts.px_to_vw(15, 1);
+            padding: fonts.px_to_vw(12, 1) fonts.px_to_vw(20, 1);
+            z-index: 10;
+
+            &:hover {
+                filter: grayscale(0%);
+                transform: scale(1.03);
+            }
+            
+            @include vars.adapted-content-mobile {
+                bottom: fonts.px_to_vw(12, 2);
+                right: fonts.px_to_vw(12, 2);
+                padding: fonts.px_to_vw(8, 2) fonts.px_to_vw(14, 2);
+                border-radius: fonts.px_to_vw(12, 2);
+            }
+            
+            .experience-card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: fonts.px_to_vw(2, 1);
+                
+                .experience-number {
+                    @include fonts.family-Graphik-Black;
+                    font-size: fonts.px_to_vw(32, 1);
+                    color: #9AF5FE;
+                    line-height: 1;
+                    
+                    @include vars.adapted-content-mobile {
+                        font-size: fonts.px_to_vw(24, 2);
+                    }
+                }
+                
+                .experience-label {
+                    @include fonts.family-Graphik-Regular;
+                    font-size: fonts.px_to_vw(10, 1);
+                    color: rgba(255, 255, 255, 0.9);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    white-space: nowrap;
+                    
+                    @include vars.adapted-content-mobile {
+                        font-size: fonts.px_to_vw(8, 2);
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Columna derecha - Texto
+    .banner-aboutme-content {
+        max-width: fonts.px_to_vw(800);
+        
+        @include vars.adapted-content-mobile {
+            max-width: 100%;
+        }
+    }
+    
+    .banner-aboutme-subtitle {
+        @include fonts.family-Graphik-Bold;
+        font-size: fonts.px_to_vw(14, 1);
+        color: #9AF5FE;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: fonts.px_to_vw(20, 1);
+        display: block;
+        
+        @include vars.adapted-content-mobile {
+            font-size: fonts.px_to_vw(12, 2);
+            margin-bottom: fonts.px_to_vw(16, 2);
+            letter-spacing: 2px;
+        }
+    }
+    
+    .banner-aboutme-title {
+        @include fonts.family-Graphik-Black;
+        font-size: fonts.px_to_vw(64, 1);
+        color: white;
+        margin-bottom: fonts.px_to_vw(30, 1);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        
+        @include vars.adapted-content-mobile {
+            font-size: fonts.px_to_vw(36, 2);
+            margin-bottom: fonts.px_to_vw(20, 2);
+        }
+    }
+    
+    .banner-aboutme-description {
+        @include fonts.family-Graphik-Regular;
+        font-size: fonts.px_to_vw(18, 1);
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+        margin-bottom: fonts.px_to_vw(24, 1);
+        
+        @include vars.adapted-content-mobile {
+            font-size: fonts.px_to_vw(16, 2);
+            margin-bottom: fonts.px_to_vw(20, 2);
+            line-height: 1.5;
+        }
+    }
+    
+    .banner-aboutme-quote {
+        display: flex;
+        align-items: baseline;
+        gap: fonts.px_to_vw(8, 1);
+        margin-top: fonts.px_to_vw(30, 1);
+        padding-top: fonts.px_to_vw(24, 1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        
+        @include vars.adapted-content-mobile {
+            gap: fonts.px_to_vw(6, 2);
+            margin-top: fonts.px_to_vw(24, 2);
+            padding-top: fonts.px_to_vw(20, 2);
+        }
+        
+        .quote-mark {
+            @include fonts.family-Graphik-Bold;
+            font-size: fonts.px_to_vw(32, 1);
+            color: #9AF5FE;
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(24, 2);
+            }
+        }
+        
+        .quote-text {
+            @include fonts.family-Graphik-Regular;
+            font-size: fonts.px_to_vw(18, 1);
+            color: rgba(255, 255, 255, 0.7);
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(14, 2);
+            }
+        }
+    }
+    
+    // Technical Stack Section
+    .tech-stack-section {
+        margin-bottom: fonts.px_to_vw(80, 1);
+        
+        @include vars.adapted-content-mobile {
+            margin-bottom: fonts.px_to_vw(60, 2);
+        }
+        
+        .section-title {
+            @include fonts.family-Graphik-Black;
+            font-size: fonts.px_to_vw(48, 1);
+            color: white;
+            margin-bottom: fonts.px_to_vw(20, 1);
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(32, 2);
+                margin-bottom: fonts.px_to_vw(16, 2);
+            }
+        }
+        
+        .section-description {
+            @include fonts.family-Graphik-Regular;
+            font-size: fonts.px_to_vw(18, 1);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: fonts.px_to_vw(40, 1);
+            max-width: fonts.px_to_vw(600);
+            
+            @include vars.adapted-content-mobile {
+                font-size: fonts.px_to_vw(16, 2);
+                margin-bottom: fonts.px_to_vw(30, 2);
+                max-width: 100%;
+            }
+        }
+        
+        .tech-stack-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: fonts.px_to_vw(16, 1);
+        }
+    }
+    
+    // CTA Section
+    .cta-section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: fonts.px_to_vw(40, 1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        
+        @include vars.adapted-content-mobile {
+            justify-content: center;
+            padding-top: fonts.px_to_vw(30, 2);
+        }
+        
+        .cta-button {
+            @include vars.adapted-content-web {
+                font-size: fonts.px_to_vw(16) !important;
+                padding: fonts.px_to_vw(14) fonts.px_to_vw(32) !important;
+            }
+        }
+    }
+}

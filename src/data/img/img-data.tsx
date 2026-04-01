@@ -45,6 +45,15 @@ export const whatsapp_icon_header = {
     alt: 'whatsapp_icon_header'
 }
 
+export const Me_photo = {
+    url: '/imgs/AboutMe/Me.jpeg',
+    alt: 'Me_photo'
+}
+
+export const MySql = {
+    url: '/imgs/AboutMe/MySQL_Logo.webp',
+    alt: 'MySql'
+}
 
 //icons
 
