@@ -38,6 +38,9 @@ export const language_es = {
          title: "Stack Técnico",
          description: "Mi arsenal tecnológico está diseñado para el rendimiento y la escalabilidad moderna."
       },
+      apiRest: {
+         description: "Arquitecturas desacopladas y comunicación eficiente.",
+      },
       cta: {
          ready: "Listo para desplegar."
       }
