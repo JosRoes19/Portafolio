@@ -38,6 +38,9 @@ export const language_en = {
          title: "Tech Stack",
          description: "My technology stack is built for performance and modern scalability."
       },
+      apiRest: {
+         description: "Designing decoupled architectures with efficient communication between systems.",
+      },
       cta: {
          ready: "Ready to deploy."
       }

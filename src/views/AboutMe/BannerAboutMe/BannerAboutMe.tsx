@@ -3,7 +3,7 @@ import useMobile from "../../../hooks/useMobile";
 import Animator from "../../../components/Animator/Animator";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
 import { CardsLined } from "../../../components/CardsLined/CardLined";
-import { arrow_right_white, ReactLogo, NodeJsLogo, MySql, AngularLogo, Me_photo } from "../../../data/img/img-data";
+import { arrow_right_white, ReactLogo, NodeJsLogo, MySql, AngularLogo, Me_photo, LaravelLogo, icon_close } from "../../../data/img/img-data";
 import './BannerAboutMe.scss';
 import { useScroll } from "../../../hooks/useScroll";
 
@@ -13,11 +13,16 @@ export const BannerAboutMe = () => {
     useScroll("section-banner-aboutme");
 
     const mainTechStack = [
-        { name: "React", icon: ReactLogo },
+        { name: "Laravel", icon: LaravelLogo },
         { name: "Angular", icon: AngularLogo },
         { name: "Node.js", icon: NodeJsLogo },
-        { name: "MySQL", icon: MySql }
+        { name: "MySQL", icon: MySql },
+        { name: "React", icon: ReactLogo },
     ];
+
+    const apis = [
+        {name: "API's", description: t('about.apiRest.description')}
+    ]
 
     return (
         <section className="section-banner-aboutme" id="section-banner-aboutme">
@@ -58,7 +63,7 @@ export const BannerAboutMe = () => {
                     </Animator>
                 </div>
 
-                <Animator type="fade" duration={0.5} delay={0.3}>
+                <Animator type="LeftHorizontal" duration={0.5} delay={0.3}>
                     <div className="tech-stack-section">
                         <h2 className="section-title">{t('about.techStack.title')}</h2>
                         <p className="section-description">
@@ -70,13 +75,19 @@ export const BannerAboutMe = () => {
                                 <CardsLined key={index} name={tech.name} icon={tech.icon} />
                             ))}
                         </div>
+
+                        <div className="api-grid">
+                            {apis.map((api, index) => (
+                                <CardsLined key={index} name={api.name} description={api.description} />
+                            ))}
+                        </div>
                     </div>
                 </Animator>
 
                 <Animator type="fade" duration={0.5} delay={0.4}>
-                    <div className="cta-section">
+                    <Animator type="fade" duration={0.5} className="cta-section">
                         <BtnLined to="/contact" text={t('about.cta.ready')} customColor="#9AF5FE" customIcon={arrow_right_white} className="cta-button"/>
-                    </div>
+                    </Animator>
                 </Animator>
             </div>
         </section>

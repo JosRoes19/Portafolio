@@ -2,17 +2,19 @@ import './CardLined.scss';
 
 interface CardsLinedProps {
     name: string;
-    icon: {
+    icon?: {
         url: string;
         alt: string;
     } | string; 
     user?: string;
     redirect?: string; 
     className?: string;
+    description?: string;
 }
 
-export const CardsLined = ({ name, icon, user, redirect, className }: CardsLinedProps) => {
+export const CardsLined = ({ name, icon, user, redirect, className, description }: CardsLinedProps) => {
     const getIconSrc = () => {
+        if (!icon) return null;
         if (typeof icon === 'object' && icon !== null && 'url' in icon) {
             return icon.url;
         }
@@ -20,6 +22,7 @@ export const CardsLined = ({ name, icon, user, redirect, className }: CardsLined
     };
 
     const getIconAlt = () => {
+        if (!icon) return '';
         if (typeof icon === 'object' && icon !== null && 'alt' in icon) {
             return icon.alt;
         }
@@ -34,25 +37,22 @@ export const CardsLined = ({ name, icon, user, redirect, className }: CardsLined
 
     const CardContent = () => (
         <>
-            <img 
-                src={getIconSrc()} 
+            {icon && (<img 
+                src={getIconSrc()!} 
                 alt={getIconAlt()} 
                 className='tech-icon' 
-            />
+            />)}
             <div className='tech-info'>
                 <span className="tech-name">{name}</span>
                 {user && <span className='tech-user'>{user}</span>}
+                {description && <span className='tech-user'>{description}</span>}
             </div>
         </>
     );
 
     if (redirect) {
         return (
-            <a 
-                href={redirect}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`tech-card-item ${className || ''}`}
+            <a href={redirect} target="_blank" rel="noopener noreferrer" className={`tech-card-item ${className || ''}`}
                 onClick={(e) => {
                     e.preventDefault();
                     handleClick();
