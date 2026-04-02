@@ -143,6 +143,11 @@ export const location_icon = {
     alt: 'location_icon'
 }
 
+export const download_icon = {
+    url: '/icons/download.svg',
+    alt: 'download_icon'
+}
+
 //videos
 
 export const index_loop_web={

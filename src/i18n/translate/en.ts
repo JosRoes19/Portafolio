@@ -130,6 +130,9 @@ export const language_en = {
             }
          ]
       },
+      "downloadCV": {
+         downloadCV:"Download resume"
+      },
       "cta": {
          "text": "Let's talk about your next project?"
       }
