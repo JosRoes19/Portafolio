@@ -54,6 +54,86 @@ export const language_es = {
       
       }
    },
+   
+   "resume": {
+      "name": "José Luis Rodríguez",
+      "title": "Ingeniero en Desarrollo de Software Multiplataforma",
+      "contact": {
+         "email": "josroes19@gmail.com",
+         "gitHub": "JosRoes19",
+         "location": "Guadalajara, Jalisco, México",
+         "linkedin": "linkedin.com/in/josroes"
+      },
+      "profile": {
+         "title": "Perfil Profesional",
+         "description": "Ingeniero recién egresado en Desarrollo y Gestión de Software egresado de la Universidad Tecnológica de Jalisco. Experiencia en proyectos educativos, actitud proactiva y gran capacidad de trabajo en equipo. Apasionado por el aprendizaje constante, la programación y la música. Titulado y comprometido con la mejora continua en el ámbito tecnológico."
+      },
+      "skills": {
+         "title": "Conocimientos Técnicos",
+         "list": [
+            { "name": "JavaScript / TypeScript", "level": 85 },
+            { "name": "ReactJS", "level": 85 },
+            { "name": "Angular", "level": 80 },
+            { "name": "NodeJS", "level": 75 },
+            { "name": "Laravel", "level": 80 },
+            { "name": "SQL", "level": 75 },
+            { "name": "PHP", "level": 70 },
+            { "name": "HTML/CSS", "level": 85 },
+            { "name": "Java", "level": 65 }
+         ]
+      },
+      "techStack": {
+         "title": "Tech Stack",
+         "list": ["React", "Angular", "Laravel", "Node.js", "MySQL"]
+      },
+      "languages": {
+         "title": "Idiomas",
+         "list": [
+            { "name": "Español", "level": "Nativo" },
+            { "name": "Inglés", "level": "B1 - Intermedio" }
+         ]
+      },
+      "experience": {
+         "title": "Experiencia Laboral",
+         "items": [
+            {
+               "title": "Desarrollador FullStack",
+               "company": "BlueBerry",
+               "period": "Mayo 2025 - Agosto 2025",
+               "description": [
+                  "Desarrollo de soluciones web para empresa del sector ingeniería y construcción.",
+                  "Participación en planeación, ejecución e implementación de nuevas funcionalidades.",
+                  "Desarrollo frontend con ReactJS y backend con Laravel.",
+                  "Diseño y mantenimiento de landing pages corporativas."
+               ]
+            },
+            {
+               "title": "Desarrollador Junior",
+               "company": "BlackFor",
+               "period": "Julio 2024 - Febrero 2025",
+               "description": [
+                  "Implementación de nuevos módulos y funcionalidades en plataforma de gestión documental con Angular.",
+                  "Gestión y solución de tickets de incidencias.",
+                  "Participación en equipos multidisciplinarios aplicando buenas prácticas de desarrollo.",
+                  "Pruebas y documentación en cada ciclo de entrega."
+               ]
+            }
+         ]
+      },
+      "education": {
+         "title": "Formación Académica",
+         "items": [
+            {
+               "degree": "Ingeniería en Desarrollo y Gestión de Software",
+               "institution": "Universidad Tecnológica de Jalisco",
+               "period": "2021 - 2025"
+            }
+         ]
+      },
+      "cta": {
+         "text": "¿Hablamos sobre tu próximo proyecto?"
+      }
+   },
 
    contact:{
       banner:{
