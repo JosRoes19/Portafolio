@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import useMobile from "../../../hooks/useMobile";
 import Animator from "../../../components/Animator/Animator";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
-import { arrow_right_white, ReactLogo, AngularLogo, LaravelLogo, NodeJsLogo, MySql, linkedin_withe, location_icon, email_icon,gitHubLogo } from '../../../data/img/img-data';
+import { arrow_right_white, ReactLogo, AngularLogo, LaravelLogo, NodeJsLogo, MySql, linkedin_withe, location_icon, email_icon, gitHubLogo, download_icon } from '../../../data/img/img-data';
 import './BannerResumeView.scss';
 import { useScroll } from "../../../hooks/useScroll";
 
@@ -53,15 +53,33 @@ export const BannerResumeView = () => {
         window.open("https://www.linkedin.com/in/josroes/", "_blank", "noopener,noreferrer");
     };
 
+    const handleDownloadCV = () => {
+        // Ruta a tu archivo CV (ajusta la ruta según tu estructura)
+        const cvUrl = "../../../public/files/CVJoseLuisRE.pdf";
+        const link = document.createElement('a');
+        link.href = cvUrl;
+        link.download = "CVJoseLuisRE.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section className="section-banner-resume-view" id="section-banner-resume-view">
             <div className="resume-container">
                 {/* Header con información personal */}
                 <Animator type="fade" duration={0.5}>
                     <div className="resume-header">
-                        <h1 className="resume-name">{t('resume.name')}</h1>
-                        <h2 className="resume-title">{t('resume.title')}</h2>
-                        
+                        <div className="resume-header-top">
+                            <div className="resume-title-wrapper">
+                                <h1 className="resume-name">{t('resume.name')}</h1>
+                                <h2 className="resume-title">{t('resume.title')}</h2>
+                            </div>
+                            <button className="download-cv-btn" onClick={handleDownloadCV}>
+                                <img src={download_icon.url} alt={download_icon.alt} className="download-icon" />
+                                <span>{t('resume.downloadCV.downloadCV')}</span>
+                            </button>
+                        </div>
                         <div className="resume-contact">
                             <div className="contact-item" onClick={handleEmailClick}>
                                 <img src={email_icon.url} alt="email" className="contact-icon" />
@@ -83,6 +101,7 @@ export const BannerResumeView = () => {
                     </div>
                 </Animator>
 
+                {/* Resto del código igual... */}
                 <div className="resume-grid">
                     {/* Columna Izquierda */}
                     <div className="resume-left">

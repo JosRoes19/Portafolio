@@ -130,6 +130,9 @@ export const language_es = {
             }
          ]
       },
+      "downloadCV": {
+         downloadCV:"Descargar currículum"
+      },
       "cta": {
          "text": "¿Hablamos sobre tu próximo proyecto?"
       }
