@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { projectsService } from '../../services/projectsService';
 import './footer.scss';
 import useMobile from "../../hooks/useMobile";
 import Animator from "../Animator/Animator";
@@ -9,6 +11,7 @@ export const Footer = () => {
     const location = useLocation();
     const { t } = useTranslation();
     const { isMobile } = useMobile();
+    const [hasProjects, setHasProjects] = useState<boolean>(true);
 
     const redirectToExternalLink = (href: string) => window.open(href, '_blank');
 
@@ -16,6 +19,14 @@ export const Footer = () => {
     if (location.pathname.startsWith("/contact")) {
         return null;
     }
+
+    useEffect(() => {
+        const checkProjects = async () => {
+            const exists = await projectsService.checkProjectsExist();
+            setHasProjects(exists);
+        };
+        checkProjects();
+    }, []);
 
     return (
         <footer className="footer-component">
@@ -45,7 +56,12 @@ export const Footer = () => {
                 <Animator type="fade" className="footer-nav-links">
                     <Link to='/' className="footer-nav-link">{t("menu.index")}</Link>
                     <span className="footer-nav-separator">|</span>
-                    <Link to='/projects' className="footer-nav-link">{t("menu.projects")}</Link>
+                    {hasProjects && (
+                        <>
+                            <Link to='/projects' className="footer-nav-link">{t("menu.projects")}</Link>
+                            <span className="footer-nav-separator">|</span>
+                        </>
+                    )}
                     <span className="footer-nav-separator">|</span>
                     <Link to='/aboutme' className="footer-nav-link">{t("menu.aboutme")}</Link>
                     <span className="footer-nav-separator">|</span>

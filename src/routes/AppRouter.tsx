@@ -1,16 +1,32 @@
-import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import ProjectsView from '../views/ProjectsView/ProjectsView';
-import  ResumeView from '../views/ResumeView/ResumeView';
-
+import { lazy, useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { projectsService } from '../services/projectsService';
 
 const Index = lazy(() => import('../views/Index/Index'));
-const Contact = lazy(() => import('../views/Contact/Contact'));
+const Projects = lazy(() => import('../views/ProjectsView/ProjectsView'));
 const AboutMe = lazy(() => import('../views/AboutMe/AboutMe'));
+const Resume = lazy(() => import('../views/ResumeView/ResumeView'));
+const Contact = lazy(() => import('../views/Contact/Contact'));
+
 
 
 
 export const AppRouter = () => {
+  const { t } = useTranslation();
+  const [hasProjects, setHasProjects] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkProjects = async () => {
+      const exists = await projectsService.checkProjectsExist();
+      setHasProjects(exists);
+    };
+    checkProjects();
+  }, []);
+
+  if (hasProjects === null) {
+    return <div className='loading-screen'>{t("global.loading")}</div>
+  }
 
   return (
     <Routes> 
@@ -18,8 +34,13 @@ export const AppRouter = () => {
           <Route path="/home" element={<Index />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/aboutme' element={<AboutMe />} />
-          <Route path='/projects' element={<ProjectsView />} />
-          <Route path='/resume' element={<ResumeView />} />
+          <Route path='/resume' element={<Resume />} />
+          {hasProjects ? (
+              <Route path='/projects' element={<Projects />} />
+            ) : (
+              <Route path='/projects' element={<Navigate to="/" replace />} />
+            ) 
+          }
     </Routes>
   );
 };

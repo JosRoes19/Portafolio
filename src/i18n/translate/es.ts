@@ -2,6 +2,7 @@ export const language_es = {
    lang: "es",
    global: {
       button_conoce: 'Conoce más',
+      loading: 'Cargando...'
    },
 
    menu_header:{

@@ -5,7 +5,6 @@ export const ProjectsView = () => {
     return(
         <>
             <BannerProjectsView />
-            <ContentProjectsView />
         </>
     )
 }

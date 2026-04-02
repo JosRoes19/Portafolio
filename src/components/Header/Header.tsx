@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import useMobile from "../../hooks/useMobile";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { projectsService } from '../../services/projectsService';
 import { flag_mx, flag_usa, arrow_down, terminal_logo, menu_mobil } from "../../data/img/img-data" //icons
 import { useMenu } from './hooks/useMenu';
 import { useChangeLang } from "./hooks/useChangeLang";
@@ -15,6 +17,15 @@ export const Header = () => {
     const { flag, changeLanguage } = useChangeLang();
     const { visibleClass, openMenu, closeMenu, go } = useMenu();
     const isSelected = (to: string) => pathname === to ? ' selected' : '';
+    const [hasProjects, setHasProjects] = useState<boolean>(true);
+
+    useEffect(() => {
+        const checkProjects = async () => {
+            const exists = await projectsService.checkProjectsExist();
+            setHasProjects(exists);
+        };
+        checkProjects();
+    }, []);
 
     return (
         <header className='main-header-component'>
@@ -50,7 +61,11 @@ export const Header = () => {
                         </header>
                         <div className='main-header-menu-component-mobile-links'>
                             <Link to='/' className={'main-header-menu-component-mobile-link' + (isSelected("/") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.index')}</Link>
-                            <Link to='/projects' className={'main-header-menu-component-mobile-link' + (isSelected("/projects") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.projects')}</Link>
+                            {hasProjects && (
+                                <Link to='/projects' className={'main-header-menu-component-mobile-link' + (isSelected("/projects") ? " selected" : "")} onClick={closeMenu}>
+                                    {t('menu_header.projects')}
+                                </Link>
+                            )}
                             <Link to='/aboutme' className={'main-header-menu-component-mobile-link' + (isSelected("/aboutme") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.aboutme')}</Link>
                             <Link to='/resume' className={'main-header-menu-component-mobile-link' + (isSelected("/resume") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.resume')}</Link>
                             <Link to='/contact' className={'main-header-menu-component-mobile-link' + (isSelected("/contact") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.contact')}</Link>
@@ -71,7 +86,11 @@ export const Header = () => {
                         </Animator>
                         <div className='main-header-component-section2-div'>
                             <Link to='/' className={'main-header-component-section2-div-link' + isSelected("/")}>{t('menu_header.index')}</Link>
-                            <Link to='/projects' className={'main-header-component-section2-div-link' + isSelected("/projects")}>{t('menu_header.projects')}</Link>
+                            {hasProjects && (
+                                <Link to='/projects' className={'main-header-component-section2-div-link' + isSelected("/projects")}>
+                                    {t('menu_header.projects')}
+                                </Link>
+                            )}
                             <Link to='/aboutme' className={'main-header-component-section2-div-link' + isSelected("/aboutme")}>{t('menu_header.aboutme')}</Link>
                             <Link to='/resume' className={'main-header-component-section2-div-link' + isSelected("/resume")}>{t('menu_header.resume')}</Link>
                             <Link to='/contact' className={'main-header-component-section2-div-link' + isSelected("/contact")}>{t('menu_header.contact')}</Link>
