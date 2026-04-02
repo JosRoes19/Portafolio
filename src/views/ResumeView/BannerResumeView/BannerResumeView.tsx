@@ -4,12 +4,10 @@ import Animator from "../../../components/Animator/Animator";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
 import { arrow_right_white, ReactLogo, AngularLogo, LaravelLogo, NodeJsLogo, MySql, linkedin_withe, location_icon, email_icon, gitHubLogo, download_icon } from '../../../data/img/img-data';
 import './BannerResumeView.scss';
-import { useScroll } from "../../../hooks/useScroll";
 
 export const BannerResumeView = () => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
-    useScroll("section-banner-resume-view");
 
     // Obtener datos de traducción
     const skills = t('resume.skills.list', { returnObjects: true }) as Array<{ name: string; level: number }>;
