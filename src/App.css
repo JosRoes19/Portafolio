@@ -5,8 +5,9 @@
 }
 
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body, #root {
@@ -14,6 +15,9 @@ html, body, #root {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 main#page-main-content {
