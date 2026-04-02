@@ -373,6 +373,56 @@ header.main-header-component {
             }
         }
     }
+
+    .footer-right {
+        .footer-social {
+            display: flex;
+            gap: fonts.px_to_vw(20, 1);
+            
+            @include vars.adapted-content-mobile {
+                gap: fonts.px_to_vw(25, 2);
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .footer-social-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: fonts.px_to_vw(36, 1);
+                height: fonts.px_to_vw(36, 1);
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.05);
+                transition: all 0.3s ease;
+                
+                @include vars.adapted-content-mobile {
+                    width: fonts.px_to_vw(40, 2);
+                    height: fonts.px_to_vw(40, 2);
+                }
+                
+                &:hover {
+                    background: #9AF5FE;
+                    transform: translateY(-3px);
+                    
+                    img {
+                        filter: brightness(0);
+                    }
+                }
+                
+                img {
+                    width: fonts.px_to_vw(20, 1);
+                    height: fonts.px_to_vw(20, 1);
+                    object-fit: contain;
+                    transition: filter 0.3s ease;
+                    
+                    @include vars.adapted-content-mobile {
+                        width: fonts.px_to_vw(22, 2);
+                        height: fonts.px_to_vw(22, 2);
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Animaciones

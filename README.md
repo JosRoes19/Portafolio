@@ -71,3 +71,8 @@ export default defineConfig([
   },
 ])
 ```
+// Se comentaron las lineas de las vistas de Proyectos:
+// AppRputer.tsx
+// Header.tsx
+// Header_styles.scss
+// Footer.tsx
