@@ -30,10 +30,6 @@ export const NodeJsLogo = {
     alt: 'NodeJsLogo'
 }
 
-export const icon_header_location = {
-    url: '/imgs/Header/icon_header_location.svg',
-    alt: 'iconLocation'
-}
 
 export const mail_icon_header = {
     url: '/imgs/Header/mail_icon_header.webp',
@@ -95,10 +91,6 @@ export const icon_whatsapp={
     url: '/icons/whatsappBtn.svg',
     alt: 'icon_whatsapp'
 }
-export const icon_location_black={
-    url: '/icons/icon_location_black.svg',
-    alt: 'icon_location_black'
-}
 export const icon_close={
     url: '/icons/icon_close.svg',
     alt: 'icon_close'
@@ -126,9 +118,29 @@ export const linkedin = {
     alt: 'linkedin'
 }
 
+export const linkedin_withe = {
+    url: '/icons/linkedin_withe.svg',
+    alt: 'linkedin_withe'
+}
+
 export const gitHubLogo = {
     url: '/icons/GithubLogo.svg',
     alt: 'gitHubLogo'
+}
+
+export const email_icon = {
+    url: '/icons/email.svg',
+    alt: 'email_icon'
+}
+
+export const icon_phone = {
+    url: '/icons/phone.svg',
+    alt: 'icon_phone'
+}
+
+export const location_icon = {
+    url: '/icons/location.svg',
+    alt: 'location_icon'
 }
 
 //videos
