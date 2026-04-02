@@ -45,8 +45,8 @@ export const Footer = () => {
                 <Animator type="fade" className="footer-nav-links">
                     <Link to='/' className="footer-nav-link">{t("menu.index")}</Link>
                     <span className="footer-nav-separator">|</span>
-                    <Link to='/projects' className="footer-nav-link">{t("menu.projects")}</Link>
-                    <span className="footer-nav-separator">|</span>
+                    {/* <Link to='/projects' className="footer-nav-link">{t("menu.projects")}</Link>
+                    <span className="footer-nav-separator">|</span> */}
                     <Link to='/aboutme' className="footer-nav-link">{t("menu.aboutme")}</Link>
                     <span className="footer-nav-separator">|</span>
                     <Link to='/resume' className="footer-nav-link">{t("menu.resume")}</Link>
