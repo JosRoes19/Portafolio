@@ -51,16 +51,16 @@ export const BannerResumeView = () => {
         window.open("https://www.linkedin.com/in/josroes/", "_blank", "noopener,noreferrer");
     };
 
-    const handleDownloadCV = () => {
-        // Ruta a tu archivo CV (ajusta la ruta según tu estructura)
-        const cvUrl = "../../../public/files/CVJoseLuisRE.pdf";
-        const link = document.createElement('a');
-        link.href = cvUrl;
-        link.download = "CVJoseLuisRE.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+const handleDownloadCV = () => {
+    const cvUrl = '/files/CVJoseLuisRE.pdf';
+    
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = "CVJoseLuisRE.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
 
     return (
         <section className="section-banner-resume-view" id="section-banner-resume-view">
