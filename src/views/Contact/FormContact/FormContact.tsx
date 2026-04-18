@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
 import useMobile from "../../../hooks/useMobile";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
-import { arrow_right_white, check_white, flag_mx } from "../../../data/img/img-data";
+import { arrow_right_white, check_white } from "../../../data/img/img-data";
 import "./FormContact.scss";
 
 interface FormData {
@@ -22,6 +23,8 @@ interface FormErrors {
 const FormContact = () => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
+    const formRef = useRef<HTMLFormElement>(null);
+    
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -79,8 +82,34 @@ const FormContact = () => {
         setIsSubmitting(true);
         
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            console.log('Form submitted:', formData);
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                from_phone: formData.phone || "No proporcionado",
+                message_html: formData.message,
+                to_email: "josroes.19@gmail.com",
+                date: new Date().toLocaleString(),
+            };
+
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ADMIN,
+                templateParams,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID_USER,
+                {
+                    from_name: formData.name,
+                    to_email: formData.email,
+                    message_html: formData.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            // ✅ Solo mostramos la pantalla de éxito (sin toast)
             setIsSuccess(true);
             
             setFormData({
@@ -89,8 +118,14 @@ const FormContact = () => {
                 phone: '',
                 message: ''
             });
+            
+            if (formRef.current) {
+                formRef.current.reset();
+            }
         } catch (error) {
             console.error('Error submitting form:', error);
+            // ✅ Aquí podrías agregar un toast SOLO para errores
+            // toast.error("Error al enviar. Intenta de nuevo.");
         } finally {
             setIsSubmitting(false);
         }
@@ -100,7 +135,7 @@ const FormContact = () => {
         <div className="form-contact-container">
             {!isSuccess ? (
                 <div className="form-contact-card">
-                    <form onSubmit={handleSubmit}>
+                    <form ref={formRef} onSubmit={handleSubmit}>
                         <div className="form-contact-grid">
                             {/* Nombre */}
                             <div className="form-contact-field">
