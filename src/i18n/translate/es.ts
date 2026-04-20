@@ -66,7 +66,7 @@ export const language_es = {
       },
       "profile": {
          "title": "Perfil Profesional",
-         "description": "Ingeniero recién egresado en Desarrollo y Gestión de Software egresado de la Universidad Tecnológica de Jalisco. Experiencia en proyectos educativos, actitud proactiva y gran capacidad de trabajo en equipo. Apasionado por el aprendizaje constante, la programación y la música. Titulado y comprometido con la mejora continua en el ámbito tecnológico."
+         "description": "Ingeniero en Desarrollo y Gestión de Software egresado de la Universidad Tecnológica de Jalisco. Experiencia en proyectos educativos, actitud proactiva y gran capacidad de trabajo en equipo. Apasionado por el aprendizaje constante, la programación y la música. Titulado y comprometido con la mejora continua en el ámbito tecnológico."
       },
       "skills": {
          "title": "Conocimientos Técnicos",
