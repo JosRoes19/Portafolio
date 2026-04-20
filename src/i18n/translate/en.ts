@@ -66,7 +66,7 @@ export const language_en = {
       },
       "profile": {
          "title": "Professional Profile",
-         "description": "Recent graduate in Software Development and Management from Universidad Tecnológica de Jalisco. Experience in educational projects, proactive attitude and great teamwork skills. Passionate about continuous learning, programming and music. Graduated and committed to continuous improvement in the technological field."
+         "description": "Software Development and Management Engineer from Universidad Tecnológica de Jalisco. Experience in educational projects, proactive attitude and great teamwork skills. Passionate about continuous learning, programming and music. Graduated and committed to continuous improvement in the technological field."
       },
       "skills": {
          "title": "Technical Skills",
