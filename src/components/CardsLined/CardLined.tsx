@@ -12,7 +12,14 @@ interface CardsLinedProps {
     description?: string;
 }
 
-export const CardsLined = ({ name, icon, user, redirect, className, description }: CardsLinedProps) => {
+interface CardContentProps {
+    icon?: CardsLinedProps['icon'];
+    name: string;
+    user?: string;
+    description?: string;
+}
+
+const CardContent = ({ icon, name, user, description }: CardContentProps) => {
     const getIconSrc = () => {
         if (!icon) return null;
         if (typeof icon === 'object' && icon !== null && 'url' in icon) {
@@ -29,13 +36,7 @@ export const CardsLined = ({ name, icon, user, redirect, className, description 
         return name;
     };
 
-    const handleClick = () => {
-        if (redirect) {
-            window.open(redirect, '_blank', 'noopener,noreferrer');
-        }
-    };
-
-    const CardContent = () => (
+    return (
         <>
             {icon && (<img 
                 src={getIconSrc()!} 
@@ -49,23 +50,28 @@ export const CardsLined = ({ name, icon, user, redirect, className, description 
             </div>
         </>
     );
+};
+
+export const CardsLined = ({ name, icon, user, redirect, className, description }: CardsLinedProps) => {
+    const openExternalLink = () => {
+        if (redirect) {
+            window.open(redirect, '_blank', 'noopener,noreferrer');
+        }
+    };
 
     if (redirect) {
         return (
-            <a href={redirect} target="_blank" rel="noopener noreferrer" className={`tech-card-item ${className || ''}`}
-                onClick={(e) => {
-                    e.preventDefault();
-                    handleClick();
-                }}
+            <button className={`tech-card-item ${className || ''}`}
+                onClick={openExternalLink}
             >
-                <CardContent />
-            </a>
+                <CardContent icon={icon} name={name} user={user} description={description} />
+            </button>
         );
     }
 
     return (
         <div className={`tech-card-item ${className || ''}`}>
-            <CardContent />
+            <CardContent icon={icon} name={name} user={user} description={description} />
         </div>
     );
 };

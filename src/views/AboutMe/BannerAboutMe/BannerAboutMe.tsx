@@ -71,14 +71,14 @@ export const BannerAboutMe = () => {
                         </p>
                         
                         <div className="tech-stack-grid">
-                            {mainTechStack.map((tech, index) => (
-                                <CardsLined key={index} name={tech.name} icon={tech.icon} />
+                            {mainTechStack.map((tech) => (
+                                <CardsLined key={tech.name} name={tech.name} icon={tech.icon} />
                             ))}
                         </div>
 
                         <div className="api-grid">
-                            {apis.map((api, index) => (
-                                <CardsLined key={index} name={api.name} description={api.description} />
+                            {apis.map((api) => (
+                                <CardsLined key={api.name} name={api.name} description={api.description} />
                             ))}
                         </div>
                     </div>

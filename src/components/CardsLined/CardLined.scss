@@ -78,6 +78,15 @@
     }
 }
 
-a.tech-card-item {
+a.tech-card-item,
+button.tech-card-item {
     cursor: pointer;
+}
+
+button.tech-card-item {
+    background: rgba(0, 0, 0, 0.7);
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    width: auto;
 }

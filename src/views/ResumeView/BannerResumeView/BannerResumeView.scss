@@ -198,6 +198,10 @@
             gap: fonts.px_to_vw(8);
             color: rgba(255, 255, 255, 0.7);
             @include fonts.family-Graphik-Regular;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
             
             @include vars.adapted-content-web {
                 font-size: fonts.px_to_vw(14);

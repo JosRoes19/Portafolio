@@ -32,8 +32,8 @@ const BannerContact = () => {
                             <p>{t('contact.banner.p3')}</p>
                         </div>
                         <div className="tech-cards-horizontal ">
-                            {plataforms.map((plat, index) => (
-                                <CardsLined key={index} name={plat.name} icon={plat.icon} user={plat.user} redirect={plat.redirect}/>
+                            {plataforms.map((plat) => (
+                                <CardsLined key={plat.name} name={plat.name} icon={plat.icon} user={plat.user} redirect={plat.redirect}/>
                             ))}
                         </div>
                     </Animator>
