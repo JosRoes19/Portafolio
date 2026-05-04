@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "../../hooks/useAnimation";
 import type{ AnimationType } from "../../hooks/interfaces/AnimationProps";
@@ -17,12 +17,17 @@ interface Props {
 const AnimatorFade = ({ className = '', children, type = 'slide', duration = 1.5 , delay = 0, noOverflow, parentFlex}: Props) => {
     const { ref, inView } = useInView();
     const animationSettings = useAnimation(type, duration);
+    const prefersReducedMotion = useReducedMotion();
 
     if (!animationSettings) return null;
 
+    if (prefersReducedMotion) {
+        return <div className={className}>{children}</div>;
+    }
+
     return (
         <div style={{ ...{overflow: !noOverflow ? 'hidden' : 'visible', position: 'relative'}, ...(parentFlex ? { flex: 1 } : {}) }}>
-            <motion.div
+            <m.div
                 className={className}
                 ref={ref}
                 initial="hidden"
@@ -31,7 +36,7 @@ const AnimatorFade = ({ className = '', children, type = 'slide', duration = 1.5
                 transition={{ duration, delay }}
             >
                 {children}
-            </motion.div>
+            </m.div>
         </div>
     );
 };

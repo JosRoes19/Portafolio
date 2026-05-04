@@ -1,0 +1,8 @@
+{
+  "ignore": {
+    "files": [
+      "src/styles/fonts.scss",
+      "src/styles/variables.scss"
+    ]
+  }
+}

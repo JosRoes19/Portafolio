@@ -31,16 +31,6 @@ export const NodeJsLogo = {
 }
 
 
-export const mail_icon_header = {
-    url: '/imgs/Header/mail_icon_header.webp',
-    alt: 'mail_icon_header'
-}
-
-export const whatsapp_icon_header = {
-    url: '/imgs/Header/whatsapp_icon_header.webp',
-    alt: 'whatsapp_icon_header'
-}
-
 export const Me_photo = {
     url: '/imgs/AboutMe/Me.jpeg',
     alt: 'Me_photo'
@@ -87,23 +77,10 @@ export const check_white = {
     alt: 'check_white'
 }
 
-export const icon_whatsapp={
-    url: '/icons/whatsappBtn.svg',
-    alt: 'icon_whatsapp'
-}
 export const icon_close={
     url: '/icons/icon_close.svg',
     alt: 'icon_close'
 }
-export const icon_prev={
-    url: '/icons/icon_prev.svg',
-    alt: 'icon_prev'
-}
-export const icon_next={
-    url: '/icons/icon_next.svg',
-    alt: 'icon_next'
-}
-
 export const flag_mx={
     url: '/icons/flag_mx.svg',
     alt: 'flag_mx'
@@ -133,11 +110,6 @@ export const email_icon = {
     alt: 'email_icon'
 }
 
-export const icon_phone = {
-    url: '/icons/phone.svg',
-    alt: 'icon_phone'
-}
-
 export const location_icon = {
     url: '/icons/location.svg',
     alt: 'location_icon'
@@ -146,17 +118,6 @@ export const location_icon = {
 export const download_icon = {
     url: '/icons/download.svg',
     alt: 'download_icon'
-}
-
-//videos
-
-export const index_loop_web={
-    url: '/videos/loop_banner.mp4',
-    alt: 'index_loop_web'
-}
-export const index_loop_mobil={
-    url: '/videos/loop_banner.mp4',
-    alt: 'index_loop_mobil'
 }
 
 //Gif

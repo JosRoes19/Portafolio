@@ -1,7 +1,7 @@
 import { BannerProjectsView } from "./BannerProjectsView/BannerProjectsView";
 import { ContentProjectsView } from "./ContentProjectsView/ContentProjectsView";
 
-export const ProjectsView = () => {
+const ProjectsView = () => {
     return(
         <>
             <BannerProjectsView />
