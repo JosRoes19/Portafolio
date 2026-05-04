@@ -95,12 +95,16 @@ header.main-header-component {
                     font-size: fonts.px_to_vw(14, 2);
                     padding: fonts.px_to_vw(8, 2);
                     gap: fonts.px_to_vw(8, 2);
+                    border: none;
                     border-bottom: 2px solid transparent;
                     color: white;
                     text-decoration: none;
                     align-items: center;
                     transition: all 0.3s ease-in-out;
                     cursor: pointer;
+                    background: none;
+                    font-family: inherit;
+                    width: 100%;
                     @include fonts.family-Graphik-Medium;
                     
                     &:hover {
@@ -126,10 +130,17 @@ header.main-header-component {
             }
             
             .main-header-component-mobile-menu {
-                width: fonts.px_to_vw(30, 2);
-                height: auto;
+                background: none;
+                border: none;
+                padding: 0;
                 cursor: pointer;
+                line-height: 0;
                 transition: opacity 0.3s ease;
+                
+                img {
+                    width: fonts.px_to_vw(30, 2);
+                    height: auto;
+                }
                 
                 &:hover {
                     opacity: 0.8;
@@ -254,11 +265,16 @@ header.main-header-component {
                         display: flex;
                         padding-bottom: fonts.px_to_vw(5, 1);
                         gap: fonts.px_to_vw(5, 1);
+                        border: none;
                         border-bottom: 2px solid transparent;
                         color: white;
                         text-decoration: none;
                         align-items: center;
                         transition: border-color 0.3s ease-in-out;
+                        background: none;
+                        font-family: inherit;
+                        font-size: inherit;
+                        cursor: pointer;
                         @include fonts.family-Graphik-Medium;
                         
                         &:hover {
@@ -312,7 +328,10 @@ header.main-header-component {
             cursor: pointer;
             padding: fonts.px_to_vw(5, 2) fonts.px_to_vw(10, 2);
             transition: all 0.3s ease;
+            border: none;
             border-bottom: fonts.px_to_vw(2, 2) solid transparent;
+            background: none;
+            color: white;
 
             &:hover {
                 border-color: white;

@@ -1,13 +1,22 @@
 import { arrow_top_scroll_icon } from '../../data/img/img-data';
-import { motion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import './top_scroll.scss';
 import { useScroll } from '../../hooks/useScroll';
 
 export const ScrollTop = () => {
     const { scrollTop } = useScroll("", false);
+    const prefersReducedMotion = useReducedMotion();
+
+    if (prefersReducedMotion) {
+        return (
+            <button className="scroll-to-top-component movil" onClick={scrollTop}>
+                <img src={arrow_top_scroll_icon.url} alt={arrow_top_scroll_icon.alt} />
+            </button>
+        );
+    }
 
     return (
-        <motion.div
+        <m.button
             animate={{
                     transform: "translateY(6px)",
                     transition: {
@@ -22,6 +31,6 @@ export const ScrollTop = () => {
         >
             <img src={arrow_top_scroll_icon.url} alt={arrow_top_scroll_icon.alt} />
 
-        </motion.div>
+        </m.button>
     )
 }
