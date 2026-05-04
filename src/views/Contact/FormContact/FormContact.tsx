@@ -55,7 +55,7 @@ const FormContact = () => {
         return newErrors;
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const updateField = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -140,27 +140,27 @@ const FormContact = () => {
                             {/* Nombre */}
                             <div className="form-contact-field">
                                 <label htmlFor="name">{t('contact.form.name')} *</label>
-                                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder={t('contact.form.placeholder.name')} disabled={isSubmitting} className={errors.name ? 'error' : ''} />
+                                <input type="text" id="name" name="name" value={formData.name} onChange={updateField} placeholder={t('contact.form.placeholder.name')} disabled={isSubmitting} className={errors.name ? 'error' : ''} />
                                     {errors.name && <span className="form-contact-error">{errors.name}</span>}
                             </div>
 
                             {/* Email */}
                             <div className="form-contact-field">
                                 <label htmlFor="email">{t('contact.form.email')} *</label>
-                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder={t('contact.form.placeholder.email')} disabled={isSubmitting} className={errors.email ? 'error' : ''} />
+                                <input type="email" id="email" name="email" value={formData.email} onChange={updateField} placeholder={t('contact.form.placeholder.email')} disabled={isSubmitting} className={errors.email ? 'error' : ''} />
                                     {errors.email && <span className="form-contact-error">{errors.email}</span>}
                             </div>
 
                             {/* Teléfono */}
                             <div className="form-contact-field">
                                 <label htmlFor="phone">{t('contact.form.phone') || "Teléfono"}</label>
-                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder={t('contact.form.placeholder.phone')} disabled={isSubmitting} />
+                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={updateField} placeholder={t('contact.form.placeholder.phone')} disabled={isSubmitting} />
                             </div>
 
                             {/* Mensaje */}
                             <div className="form-contact-field full-width">
                                 <label htmlFor="message">{t('contact.form.message') || "Mensaje"} *</label>
-                                <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder={t('contact.form.placeholder.message')} disabled={isSubmitting} rows={5} className={errors.message ? 'error' : ''} />
+                                <textarea id="message" name="message" value={formData.message} onChange={updateField} placeholder={t('contact.form.placeholder.message')} disabled={isSubmitting} rows={5} className={errors.message ? 'error' : ''} />
                                     {errors.message && <span className="form-contact-error">{errors.message}</span>}
                             </div>
                         </div>

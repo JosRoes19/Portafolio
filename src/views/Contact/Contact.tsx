@@ -1,7 +1,6 @@
 import BannerContact from './BannerContact/BannerContact';
 
-
-export const Contact = () => {
+const Contact = () => {
     return(
         <>
             <BannerContact/>

@@ -79,22 +79,22 @@ const handleDownloadCV = () => {
                             </button>
                         </div>
                         <div className="resume-contact">
-                            <div className="contact-item" onClick={handleEmailClick}>
+                            <button className="contact-item" onClick={handleEmailClick}>
                                 <img src={email_icon.url} alt="email" className="contact-icon" />
                                 <span>{t('resume.contact.email')}</span>
-                            </div>
-                            <div className="contact-item" onClick={handleGitHubClick}>
+                            </button>
+                            <button className="contact-item" onClick={handleGitHubClick}>
                                 <img src={gitHubLogo.url} alt="gitHub" className="contact-icon" />
                                 <span>{t('resume.contact.gitHub')}</span>
-                            </div>
+                            </button>
                             <div className="contact-item">
                                 <img src={location_icon.url} alt="location" className="contact-icon" />
                                 <span>{t('resume.contact.location')}</span>
                             </div>
-                            <div className="contact-item" onClick={handleLinkedInClick}>
+                            <button className="contact-item" onClick={handleLinkedInClick}>
                                 <img src={linkedin_withe.url} alt="linkedin" className="contact-icon" />
                                 <span>{t('resume.contact.linkedin')}</span>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </Animator>
@@ -116,8 +116,8 @@ const handleDownloadCV = () => {
                             <div className="resume-section">
                                 <h3 className="section-title">{t('resume.skills.title')}</h3>
                                 <div className="skills-grid">
-                                    {skills.map((skill, index) => (
-                                        <div key={index} className="skill-item">
+                                    {skills.map((skill) => (
+                                        <div key={skill.name} className="skill-item">
                                             <span className="skill-name">{skill.name}</span>
                                             <div className="skill-bar">
                                                 <div className="skill-progress" style={{ width: `${skill.level}%` }}></div>
@@ -133,8 +133,8 @@ const handleDownloadCV = () => {
                             <div className="resume-section">
                                 <h3 className="section-title">{t('resume.techStack.title')}</h3>
                                 <div className="tech-stack-grid">
-                                    {techStack.map((tech, index) => (
-                                        <div key={index} className="tech-badge">
+                                    {techStack.map((tech) => (
+                                        <div key={tech.name} className="tech-badge">
                                             <img src={tech.icon.url} alt={tech.name} className="tech-badge-icon" />
                                             <span>{tech.name}</span>
                                         </div>
@@ -147,8 +147,8 @@ const handleDownloadCV = () => {
                         <Animator type="LeftHorizontal" duration={0.5} delay={0.4}>
                             <div className="resume-section">
                                 <h3 className="section-title">{t('resume.languages.title')}</h3>
-                                {languages.map((lang, index) => (
-                                    <div key={index} className="language-item">
+                                {languages.map((lang) => (
+                                    <div key={lang.name} className="language-item">
                                         <span className="language-name">{lang.name}</span>
                                         <span className="language-level">{lang.level}</span>
                                     </div>
@@ -163,16 +163,16 @@ const handleDownloadCV = () => {
                         <Animator type="RightHorizontal" duration={0.5} delay={0.1}>
                             <div className="resume-section">
                                 <h3 className="section-title">{t('resume.experience.title')}</h3>
-                                {experiences.map((exp, index) => (
-                                    <div key={index} className="experience-item">
+                                {experiences.map((exp) => (
+                                    <div key={`${exp.title}-${exp.company}`} className="experience-item">
                                         <div className="experience-header">
                                             <h4 className="experience-title">{exp.title}</h4>
                                             <span className="experience-company">{exp.company}</span>
                                             <span className="experience-period">{exp.period}</span>
                                         </div>
                                         <ul className="experience-description">
-                                            {exp.description.map((desc, i) => (
-                                                <li key={i}>{desc}</li>
+                                            {exp.description.map((desc) => (
+                                                <li key={desc}>{desc}</li>
                                             ))}
                                         </ul>
                                     </div>
@@ -184,8 +184,8 @@ const handleDownloadCV = () => {
                         <Animator type="RightHorizontal" duration={0.5} delay={0.2}>
                             <div className="resume-section">
                                 <h3 className="section-title">{t('resume.education.title')}</h3>
-                                {education.map((edu, index) => (
-                                    <div key={index} className="education-item">
+                                {education.map((edu) => (
+                                    <div key={`${edu.degree}-${edu.institution}`} className="education-item">
                                         <h4 className="education-degree">{edu.degree}</h4>
                                         <span className="education-institution">{edu.institution}</span>
                                         <span className="education-period">{edu.period}</span>

@@ -47,8 +47,8 @@ export const BannerIndex = () => {
                 <Animator className="container-banner-decoration" type="LeftHorizontal">
                     <span className="container-banner-underscore">_________________________________________</span>
                     <Animator className="tech-cards-horizontal" type="LeftHorizontal">
-                        {technologies.map((tech, index) => (
-                            <CardsLined key={index} name={tech.name} icon={tech.icon} />
+                        {technologies.map((tech) => (
+                            <CardsLined key={tech.name} name={tech.name} icon={tech.icon} />
                         ))}
                     </Animator>
                 </Animator>

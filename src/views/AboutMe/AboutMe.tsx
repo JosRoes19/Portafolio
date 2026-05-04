@@ -1,11 +1,9 @@
 import { BannerAboutMe } from "./BannerAboutMe/BannerAboutMe";
-/* import { ContentAboutMe } from "./ContentAboutMe/ContentAboutMe"; */
 
-export const AboutMe = () => {
+const AboutMe = () => {
     return(
         <>
             <BannerAboutMe/>
-            {/* <ContentAboutMe/> */}
         </>
     )
 }

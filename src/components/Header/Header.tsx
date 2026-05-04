@@ -30,23 +30,25 @@ export const Header = () => {
                                 <img className='main-header-component-mobile-avatar-img' src={flag.url} alt={flag.alt} />
                                 <img className='main-header-component-mobile-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
                                 <article className="main-header-component-mobile-avatar-dropdown">
-                                    <p className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
+                                    <button className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
                                         <img src={flag_mx.url} alt={flag_mx.alt} />
                                         ES
-                                    </p>
-                                    <p className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
+                                    </button>
+                                    <button className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
                                         <img src={flag_usa.url} alt={flag_usa.alt} />
                                         EN
-                                    </p>
+                                    </button>
                                 </article>
                             </div>
-                            <img onClick={openMenu} className='main-header-component-mobile-menu' src={menu_mobil.url} alt={menu_mobil.alt} />
+                            <button onClick={openMenu} className='main-header-component-mobile-menu'>
+                                <img src={menu_mobil.url} alt={menu_mobil.alt} />
+                            </button>
                         </div>
                     </section>
                     <section className={'main-header-menu-component-mobile' + visibleClass}>
                         <header className='main-header-menu-component-mobile-header'>
                             <img className='main-header-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
-                            <span className='main-header-close' onClick={closeMenu}>{t("header.closeMenu")}</span>
+                            <button className='main-header-close' onClick={closeMenu}>{t("header.closeMenu")}</button>
                         </header>
                         <div className='main-header-menu-component-mobile-links'>
                             <Link to='/' className={'main-header-menu-component-mobile-link' + (isSelected("/") ? " selected" : "")} onClick={closeMenu}>{t('menu_header.index')}</Link>
@@ -87,14 +89,14 @@ export const Header = () => {
                                 <img className='main-header-avatar-img' src={flag.url} alt={flag.alt} />
                                 <img className='main-header-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
                                 <article className="main-header-avatar-dropdown">
-                                    <p className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
+                                    <button className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
                                         <img src={flag_mx.url} alt={flag_mx.alt} />
                                         ES
-                                    </p>
-                                    <p className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
+                                    </button>
+                                    <button className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
                                         <img src={flag_usa.url} alt={flag_usa.alt} />
                                         EN
-                                    </p>
+                                    </button>
                                 </article>
                             </div>
                         </div>
