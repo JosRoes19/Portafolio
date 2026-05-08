@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { arrow_right } from '../../data/img/img-data';
 import useMobile from '../../hooks/useMobile';
@@ -93,6 +94,7 @@ export const BtnLined = ({
     disabled,
     ...props
 }: BtnOultinedProps) => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const { isMobile } = useMobile();
     const width = (isMobile ? customMobileWidth : customWidth) ?? "fit-content";
@@ -138,7 +140,7 @@ export const BtnLined = ({
             onMouseLeave={() => { hoverRef.current = false; }}
             {...sharedProps}
         >
-            <span>{loading ? 'Enviando...' : text}</span>
+            <span>{loading ? t('contact.form.sending') : text}</span>
             <RightElement 
                 loading={loading}
                 noIcon={noIcon}

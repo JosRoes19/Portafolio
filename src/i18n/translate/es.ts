@@ -151,7 +151,7 @@ export const language_es = {
          phone: "Teléfono",
          email: "Correo",
          message: "¿Colaboramos?",
-         sending: "Enviando",
+         sending: "Enviando...",
          submit: "Enviar",
          successTitle: "¡Mensaje enviado!",
          successMessage: "Gracias por contactarme. Te responderé a la mayor brevedad posible.",
