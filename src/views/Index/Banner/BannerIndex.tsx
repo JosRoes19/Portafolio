@@ -12,8 +12,8 @@ export const BannerIndex = () => {
 
     const technologies = [
         {name: "React", icon: ReactLogo},
-        {name: "Angular", icon: LaravelLogo},
-        {name: "Laravel", icon: AngularLogo},
+        {name: "Angular", icon: AngularLogo},
+        {name: "Laravel", icon: LaravelLogo},
         {name: "NodeJs", icon: NodeJsLogo}
     ]
 

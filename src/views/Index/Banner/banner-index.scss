@@ -245,6 +245,7 @@
     .tech-cards-horizontal {
         display: flex;
         flex-direction: row;
+        margin-top: fonts.px_to_vw(16, 1);
         gap: fonts.px_to_vw(16, 1);
         
         @include vars.adapted-content-mobile {
