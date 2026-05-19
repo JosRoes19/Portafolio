@@ -18,7 +18,7 @@ const BannerContact = () => {
 
     return (
         <section className="banner-contact" id="banner-contact">
-            <video className="banner-contact-video" src={isMobile ? "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4" : "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4"} autoPlay muted loop playsInline/>
+            <video className="banner-contact-video" src="https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4" autoPlay muted loop playsInline preload="metadata" />
             <div className="banner-contact-overlay" />
 
             <div className="banner-contact-content">

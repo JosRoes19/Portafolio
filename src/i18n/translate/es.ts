@@ -178,6 +178,10 @@ export const language_es = {
    footer:{
    },
 
+   app:{
+      loading: "Cargando...",
+   },
+
    menu:{
       index: "Inicio",
       projects: "Proyectos",
