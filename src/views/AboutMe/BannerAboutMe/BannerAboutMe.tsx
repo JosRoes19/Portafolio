@@ -56,9 +56,7 @@ export const BannerAboutMe = () => {
                         </p>
                         
                         <div className="banner-aboutme-quote">
-                            <span className="quote-mark">“</span>
                             <span className="quote-text">{t('about.banner.quote')}</span>
-                            <span className="quote-mark">”</span>
                         </div>
                     </Animator>
                 </div>
@@ -76,11 +74,11 @@ export const BannerAboutMe = () => {
                             ))}
                         </div>
 
-                        <div className="api-grid">
+                        {/* <div className="api-grid">
                             {apis.map((api) => (
                                 <CardsLined key={api.name} name={api.name} description={api.description} />
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                 </Animator>
 

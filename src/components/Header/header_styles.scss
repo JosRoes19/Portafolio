@@ -397,6 +397,7 @@ header.main-header-component {
         .footer-social {
             display: flex;
             gap: fonts.px_to_vw(20, 1);
+            margin-top: fonts.px_to_vw(16, 1);
             
             @include vars.adapted-content-mobile {
                 gap: fonts.px_to_vw(25, 2);

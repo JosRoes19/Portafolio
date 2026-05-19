@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import useMobile from "../../hooks/useMobile";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { flag_mx, flag_usa, arrow_down, terminal_logo, menu_mobil, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
+import { flag_mx, flag_usa, arrow_down_white, terminal_logo, menu_mobil_white, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
 import { useMenu } from './hooks/useMenu';
 import { useChangeLang } from "./hooks/useChangeLang";
 import "./header_styles.scss";
@@ -28,7 +28,7 @@ export const Header = () => {
                         <div>
                             <div className='main-header-lang'>
                                 <img className='main-header-component-mobile-avatar-img' src={flag.url} alt={flag.alt} />
-                                <img className='main-header-component-mobile-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
+                                <img className='main-header-component-mobile-avatar-arrow' src={arrow_down_white.url} alt={arrow_down_white.alt} />
                                 <article className="main-header-component-mobile-avatar-dropdown">
                                     <button className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
                                         <img src={flag_mx.url} alt={flag_mx.alt} />
@@ -41,7 +41,7 @@ export const Header = () => {
                                 </article>
                             </div>
                             <button onClick={openMenu} className='main-header-component-mobile-menu'>
-                                <img src={menu_mobil.url} alt={menu_mobil.alt} />
+                                <img src={menu_mobil_white.url} alt={menu_mobil_white.alt} />
                             </button>
                         </div>
                     </section>
@@ -87,7 +87,7 @@ export const Header = () => {
                         <div className='main-header-language-selector'>
                             <div className='main-header-language-dropdown'>
                                 <img className='main-header-avatar-img' src={flag.url} alt={flag.alt} />
-                                <img className='main-header-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
+                                <img className='main-header-avatar-arrow' src={arrow_down_white.url} alt={arrow_down_white.alt} />
                                 <article className="main-header-avatar-dropdown">
                                     <button className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
                                         <img src={flag_mx.url} alt={flag_mx.alt} />
