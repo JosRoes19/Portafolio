@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import useMobile from "../../hooks/useMobile";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { flag_mx, flag_usa, arrow_down_white, terminal_logo, menu_mobil_white, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
+import { flag_mx, flag_usa, arrow_down_white, terminal_logo40x40, menu_mobil_white, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
 import { useMenu } from './hooks/useMenu';
 import { useChangeLang } from "./hooks/useChangeLang";
 import "./header_styles.scss";
@@ -23,7 +23,7 @@ export const Header = () => {
                 <>
                     <section className='main-header-component-mobile'>
                         <Animator type='fade'>
-                            <img className='main-header-component-mobile-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-component-mobile-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} />
                         </Animator>
                         <div>
                             <div className='main-header-lang'>
@@ -47,7 +47,7 @@ export const Header = () => {
                     </section>
                     <section className={'main-header-menu-component-mobile' + visibleClass}>
                         <header className='main-header-menu-component-mobile-header'>
-                            <img className='main-header-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} />
                             <button className='main-header-close' onClick={closeMenu}>{t("header.closeMenu")}</button>
                         </header>
                         <div className='main-header-menu-component-mobile-links'>
@@ -75,7 +75,7 @@ export const Header = () => {
                 <>
                     <section className='main-header-component-section2'>
                         <Animator type='LeftHorizontal'>
-                            <img className='main-header-component-section2-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-component-section2-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} />
                         </Animator>
                         <div className='main-header-component-section2-div'>
                             <Link to='/' className={'main-header-component-section2-div-link' + isSelected("/")}>{t('menu_header.index')}</Link>

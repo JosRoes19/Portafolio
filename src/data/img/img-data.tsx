@@ -58,6 +58,11 @@ export const terminal_logo = {
     alt: '/terminal_logo'
 }
 
+export const terminal_logo40x40 = {
+    url: '/icons/terminal40x40.webp',
+    alt: '/terminal_logo40x40'
+}
+
 export const arrow_down = {
     url: '/icons/arrow_down.svg',
     alt: 'arrow_down'
