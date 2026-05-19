@@ -48,6 +48,11 @@ export const menu_mobil = {
     alt: 'menu_mobil'
 }
 
+export const menu_mobil_white = {
+    url: '/icons/menu_mobil_white.svg',
+    alt: 'menu_mobil_white'
+}
+
 export const terminal_logo = {
     url: '/icons/terminal.webp',
     alt: '/terminal_logo'
@@ -56,6 +61,11 @@ export const terminal_logo = {
 export const arrow_down = {
     url: '/icons/arrow_down.svg',
     alt: 'arrow_down'
+}
+
+export const arrow_down_white = {
+    url: '/icons/arrow_down_white.svg',
+    alt: 'arrow_down_white'
 }
 
 export const arrow_top_scroll_icon ={
