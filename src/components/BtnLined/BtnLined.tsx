@@ -66,6 +66,7 @@ const RightElement = ({ loading, noIcon, hover, hoverIcon, customIcon, asFocused
             <img 
                 src={iconSource.url} 
                 alt={iconSource.alt} 
+                width={12} height={12}
                 style={{ filter: (hover && !hoverIcon) ? "invert(1)" : (asFocused ? "invert(1)" : "invert(0)") }} 
             />
         );

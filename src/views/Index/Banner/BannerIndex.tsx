@@ -20,7 +20,7 @@ export const BannerIndex = () => {
 
     return (
         <section className="section-banner-index" id="section-banner-index">
-            <video className="container-video" src={isMobile ? "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4" : "https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4"} autoPlay muted loop playsInline />
+            <video className="container-video" src="https://res.cloudinary.com/dvht7854s/video/upload/v1773986563/loop_banner_hrn0go.mp4" autoPlay muted loop playsInline preload="auto" fetchpriority="high" />
             <div className="container-banner">
                 <Animator type="LeftHorizontal" duration={0.5}>
                     <div className="container-banner-text">
