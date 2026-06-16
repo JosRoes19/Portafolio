@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import './footer.scss';
 import useMobile from "../../hooks/useMobile";
 import Animator from "../Animator/Animator";
-import { linkedin, gitHubLogo, terminal_logo } from '../../data/img/img-data';
+import { linkedin, gitHubLogo, terminal_logo40x40 } from '../../data/img/img-data';
 
 export const Footer = () => {
     const location = useLocation();
@@ -23,7 +23,7 @@ export const Footer = () => {
                 {/* Logo y derechos */}
                 <Animator type={isMobile ? "fade" : "LeftHorizontal"} className="footer-left">
                     <div className="footer-logo">
-                        <img className="footer-logo-text" src={terminal_logo.url} alt={terminal_logo.alt} />
+                        <img className="footer-logo-text" src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} width={40} height={40} />
                     </div>
                     <div className="footer-copyright">
                     </div>
@@ -32,10 +32,10 @@ export const Footer = () => {
                 <Animator type={isMobile ? "fade" : "RightHorizontal"} className="footer-right">
                     <div className="footer-social">
                         <a href="https://github.com/JosRoes19" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
-                            <img src={gitHubLogo.url} alt={gitHubLogo.alt} />
+                            <img src={gitHubLogo.url} alt={gitHubLogo.alt} width={20} height={20} />
                         </a>
                         <a href="https://www.linkedin.com/in/josroes/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
-                            <img src={linkedin.url} alt={linkedin.alt} />
+                            <img src={linkedin.url} alt={linkedin.alt} width={20} height={20} />
                         </a>
                     </div>
                 </Animator>

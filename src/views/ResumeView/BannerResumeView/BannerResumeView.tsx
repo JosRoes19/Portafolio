@@ -52,11 +52,12 @@ export const BannerResumeView = () => {
     };
 
 const handleDownloadCV = () => {
-    const cvUrl = '/files/CVJoseLuisRE.pdf';
+    /* const cvUrl = '/files/CVJoseLuisRE.pdf'; */
+    const cvUrl = '/files/cvJLRE.pdf'; // Reemplaza con tu enlace de descarga directa
     
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = "CVJoseLuisRE.pdf";
+    link.download = "Curriculum Jose Luis Rodriguez Escobedo.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

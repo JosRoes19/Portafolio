@@ -74,6 +74,7 @@
         .footer-social {
             display: flex;
             gap: fonts.px_to_vw(20, 1);
+            margin-top: fonts.px_to_vw(16, 1);
             
             @include vars.adapted-content-mobile {
                 gap: fonts.px_to_vw(25, 2);
@@ -97,10 +98,6 @@
                 &:hover {
                     background: #9AF5FE;
                     transform: translateY(-3px);
-                    
-                    img {
-                        filter: brightness(0);
-                    }
                 }
                 
                 img {

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { arrow_right } from '../../data/img/img-data';
 import useMobile from '../../hooks/useMobile';
@@ -65,6 +66,7 @@ const RightElement = ({ loading, noIcon, hover, hoverIcon, customIcon, asFocused
             <img 
                 src={iconSource.url} 
                 alt={iconSource.alt} 
+                width={12} height={12}
                 style={{ filter: (hover && !hoverIcon) ? "invert(1)" : (asFocused ? "invert(1)" : "invert(0)") }} 
             />
         );
@@ -93,6 +95,7 @@ export const BtnLined = ({
     disabled,
     ...props
 }: BtnOultinedProps) => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const { isMobile } = useMobile();
     const width = (isMobile ? customMobileWidth : customWidth) ?? "fit-content";
@@ -138,7 +141,7 @@ export const BtnLined = ({
             onMouseLeave={() => { hoverRef.current = false; }}
             {...sharedProps}
         >
-            <span>{loading ? 'Enviando...' : text}</span>
+            <span>{loading ? t('contact.form.sending') : text}</span>
             <RightElement 
                 loading={loading}
                 noIcon={noIcon}

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import useMobile from "../../hooks/useMobile";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { flag_mx, flag_usa, arrow_down, terminal_logo, menu_mobil, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
+import { flag_mx, flag_usa, arrow_down_white, terminal_logo40x40, menu_mobil_white, gitHubLogo, linkedin} from "../../data/img/img-data" //icons
 import { useMenu } from './hooks/useMenu';
 import { useChangeLang } from "./hooks/useChangeLang";
 import "./header_styles.scss";
@@ -23,31 +23,31 @@ export const Header = () => {
                 <>
                     <section className='main-header-component-mobile'>
                         <Animator type='fade'>
-                            <img className='main-header-component-mobile-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-component-mobile-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} width={38} height={38} />
                         </Animator>
                         <div>
                             <div className='main-header-lang'>
-                                <img className='main-header-component-mobile-avatar-img' src={flag.url} alt={flag.alt} />
-                                <img className='main-header-component-mobile-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
+                                <img className='main-header-component-mobile-avatar-img' src={flag.url} alt={flag.alt} width={28} height={28} />
+                                <img className='main-header-component-mobile-avatar-arrow' src={arrow_down_white.url} alt={arrow_down_white.alt} width={12} height={12} />
                                 <article className="main-header-component-mobile-avatar-dropdown">
                                     <button className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
-                                        <img src={flag_mx.url} alt={flag_mx.alt} />
+                                        <img src={flag_mx.url} alt={flag_mx.alt} width={20} height={20} />
                                         ES
                                     </button>
                                     <button className='main-header-component-mobile-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
-                                        <img src={flag_usa.url} alt={flag_usa.alt} />
+                                        <img src={flag_usa.url} alt={flag_usa.alt} width={20} height={20} />
                                         EN
                                     </button>
                                 </article>
                             </div>
                             <button onClick={openMenu} className='main-header-component-mobile-menu'>
-                                <img src={menu_mobil.url} alt={menu_mobil.alt} />
+                                <img src={menu_mobil_white.url} alt={menu_mobil_white.alt} width={30} height={30} />
                             </button>
                         </div>
                     </section>
                     <section className={'main-header-menu-component-mobile' + visibleClass}>
                         <header className='main-header-menu-component-mobile-header'>
-                            <img className='main-header-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} width={100} height={100} />
                             <button className='main-header-close' onClick={closeMenu}>{t("header.closeMenu")}</button>
                         </header>
                         <div className='main-header-menu-component-mobile-links'>
@@ -61,10 +61,10 @@ export const Header = () => {
                         <Animator type={isMobile ? "fade" : "RightHorizontal"} className="footer-right">
                             <div className="footer-social">
                                 <a href="https://github.com/JosRoes19" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
-                                    <img src={gitHubLogo.url} alt={gitHubLogo.alt} />
+                                    <img src={gitHubLogo.url} alt={gitHubLogo.alt} width={20} height={20} />
                                 </a>
                                 <a href="https://www.linkedin.com/in/josroes/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
-                                    <img src={linkedin.url} alt={linkedin.alt} />
+                                    <img src={linkedin.url} alt={linkedin.alt} width={20} height={20} />
                                 </a>
                             </div>
                         </Animator>
@@ -75,7 +75,7 @@ export const Header = () => {
                 <>
                     <section className='main-header-component-section2'>
                         <Animator type='LeftHorizontal'>
-                            <img className='main-header-component-section2-logo' src={terminal_logo.url} alt={terminal_logo.alt} />
+                            <img className='main-header-component-section2-logo' src={terminal_logo40x40.url} alt={terminal_logo40x40.alt} width={30} height={30} />
                         </Animator>
                         <div className='main-header-component-section2-div'>
                             <Link to='/' className={'main-header-component-section2-div-link' + isSelected("/")}>{t('menu_header.index')}</Link>
@@ -86,15 +86,15 @@ export const Header = () => {
                         </div>
                         <div className='main-header-language-selector'>
                             <div className='main-header-language-dropdown'>
-                                <img className='main-header-avatar-img' src={flag.url} alt={flag.alt} />
-                                <img className='main-header-avatar-arrow' src={arrow_down.url} alt={arrow_down.alt} />
+                                <img className='main-header-avatar-img' src={flag.url} alt={flag.alt} width={24} height={24} />
+                                <img className='main-header-avatar-arrow' src={arrow_down_white.url} alt={arrow_down_white.alt} width={10} height={10} />
                                 <article className="main-header-avatar-dropdown">
                                     <button className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("es")}>
-                                        <img src={flag_mx.url} alt={flag_mx.alt} />
+                                        <img src={flag_mx.url} alt={flag_mx.alt} width={24} height={24} />
                                         ES
                                     </button>
                                     <button className='main-header-avatar-dropdown-lang' onClick={() => changeLanguage("en")}>
-                                        <img src={flag_usa.url} alt={flag_usa.alt} />
+                                        <img src={flag_usa.url} alt={flag_usa.alt} width={24} height={24} />
                                         EN
                                     </button>
                                 </article>

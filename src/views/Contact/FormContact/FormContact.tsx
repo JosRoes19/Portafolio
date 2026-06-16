@@ -57,10 +57,20 @@ const FormContact = () => {
 
     const updateField = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
+        
+        let filteredValue = value;
+        
+        if (name === 'name') {
+            filteredValue = value.replace(/[^a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]/g, '');
+        } else if (name === 'phone') {
+            filteredValue = value.replace(/[^0-9]/g, '').slice(0, 15);
+        }
+        
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: filteredValue
         }));
+        
         if (errors[name as keyof FormErrors]) {
             setErrors(prev => ({
                 ...prev,
@@ -109,7 +119,6 @@ const FormContact = () => {
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
-            // ✅ Solo mostramos la pantalla de éxito (sin toast)
             setIsSuccess(true);
             
             setFormData({
@@ -124,8 +133,6 @@ const FormContact = () => {
             }
         } catch (error) {
             console.error('Error submitting form:', error);
-            // ✅ Aquí podrías agregar un toast SOLO para errores
-            // toast.error("Error al enviar. Intenta de nuevo.");
         } finally {
             setIsSubmitting(false);
         }
@@ -140,34 +147,33 @@ const FormContact = () => {
                             {/* Nombre */}
                             <div className="form-contact-field">
                                 <label htmlFor="name">{t('contact.form.name')} *</label>
-                                <input type="text" id="name" name="name" value={formData.name} onChange={updateField} placeholder={t('contact.form.placeholder.name')} disabled={isSubmitting} className={errors.name ? 'error' : ''} />
-                                    {errors.name && <span className="form-contact-error">{errors.name}</span>}
+                                <input type="text" id="name" name="name" value={formData.name} onChange={updateField} placeholder={t('contact.form.placeholder.name')} disabled={isSubmitting} className={errors.name ? 'error' : ''} pattern="[A-Za-záéíóúüñÁÉÍÓÚÜÑ\s]+" title="Solo se permiten letras y espacios" />
+                                {errors.name && <span className="form-contact-error">{errors.name}</span>}
                             </div>
 
                             {/* Email */}
                             <div className="form-contact-field">
                                 <label htmlFor="email">{t('contact.form.email')} *</label>
-                                <input type="email" id="email" name="email" value={formData.email} onChange={updateField} placeholder={t('contact.form.placeholder.email')} disabled={isSubmitting} className={errors.email ? 'error' : ''} />
-                                    {errors.email && <span className="form-contact-error">{errors.email}</span>}
+                                <input type="email" id="email" name="email" value={formData.email} onChange={updateField} placeholder={t('contact.form.placeholder.email')} disabled={isSubmitting} className={errors.email ? 'error' : ''} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ingresa un email válido (ejemplo@dominio.com)" />
+                                {errors.email && <span className="form-contact-error">{errors.email}</span>}
                             </div>
 
                             {/* Teléfono */}
                             <div className="form-contact-field">
                                 <label htmlFor="phone">{t('contact.form.phone') || "Teléfono"}</label>
-                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={updateField} placeholder={t('contact.form.placeholder.phone')} disabled={isSubmitting} />
+                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={updateField} placeholder={t('contact.form.placeholder.phone')} disabled={isSubmitting} maxLength={15} pattern="[0-9]+" title="Solo se permiten números" />
                             </div>
 
                             {/* Mensaje */}
                             <div className="form-contact-field full-width">
                                 <label htmlFor="message">{t('contact.form.message') || "Mensaje"} *</label>
                                 <textarea id="message" name="message" value={formData.message} onChange={updateField} placeholder={t('contact.form.placeholder.message')} disabled={isSubmitting} rows={5} className={errors.message ? 'error' : ''} />
-                                    {errors.message && <span className="form-contact-error">{errors.message}</span>}
+                                {errors.message && <span className="form-contact-error">{errors.message}</span>}
                             </div>
                         </div>
 
                         <div className="form-contact-button">
-                            <BtnLined type="submit" text={isSubmitting ? (t('contact.form.sending')) : (t('contact.form.submit'))} customColor="#9AF5FE" customIcon={arrow_right_white} disabled={isSubmitting} loading={isSubmitting} className="form-contact-submit-btn"
-                            />
+                            <BtnLined type="submit" text={isSubmitting ? t('contact.form.sending') : t('contact.form.submit')} customColor="#9AF5FE" customIcon={arrow_right_white} disabled={isSubmitting} className="form-contact-submit-btn" />
                         </div>
                     </form>
                 </div>

@@ -42,6 +42,7 @@ const CardContent = ({ icon, name, user, description }: CardContentProps) => {
                 src={getIconSrc()!} 
                 alt={getIconAlt()} 
                 className='tech-icon' 
+                width={24} height={24}
             />)}
             <div className='tech-info'>
                 <span className="tech-name">{name}</span>
