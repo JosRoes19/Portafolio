@@ -30,6 +30,10 @@ export const NodeJsLogo = {
     alt: 'NodeJsLogo'
 }
 
+export const MoodleLogo = {
+    url: '/icons/moodle.webp',
+    alt: 'MoodleLogo'
+}
 
 export const Me_photo = {
     url: '/imgs/AboutMe/Me.jpeg',

@@ -4,7 +4,7 @@ import Animator from "../../../components/Animator/Animator";
 import './banner-index.scss';
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
 import { CardsLined } from "../../../components/CardsLined/CardLined";
-import { arrow_right_white, ReactLogo, LaravelLogo, AngularLogo, NodeJsLogo } from "../../../data/img/img-data";
+import { arrow_right_white, ReactLogo, LaravelLogo, AngularLogo, NodeJsLogo, MoodleLogo } from "../../../data/img/img-data";
 
 export const BannerIndex = () => {
     const { t } = useTranslation();
@@ -14,7 +14,8 @@ export const BannerIndex = () => {
         {name: "React", icon: ReactLogo},
         {name: "Angular", icon: AngularLogo},
         {name: "Laravel", icon: LaravelLogo},
-        {name: "NodeJs", icon: NodeJsLogo}
+        {name: "NodeJs", icon: NodeJsLogo},
+        {name: "Moodle", icon: MoodleLogo}
     ]
 
 
