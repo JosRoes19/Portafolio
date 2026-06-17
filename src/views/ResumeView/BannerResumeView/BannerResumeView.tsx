@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import useMobile from "../../../hooks/useMobile";
 import Animator from "../../../components/Animator/Animator";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
-import { arrow_right_white, ReactLogo, AngularLogo, LaravelLogo, NodeJsLogo, MySql, linkedin_withe, location_icon, email_icon, gitHubLogo, download_icon } from '../../../data/img/img-data';
+import { arrow_right_white, ReactLogo, AngularLogo, LaravelLogo, NodeJsLogo, MySql, linkedin_withe, location_icon, email_icon, gitHubLogo, download_icon, MoodleLogo } from '../../../data/img/img-data';
 import './BannerResumeView.scss';
 
 export const BannerResumeView = () => {
@@ -32,6 +32,7 @@ export const BannerResumeView = () => {
         "Laravel": LaravelLogo,
         "Node.js": NodeJsLogo,
         "MySQL": MySql,
+        "Moodle": MoodleLogo,
     };
 
     const techStack = techStackNames.map(name => ({
