@@ -3,7 +3,7 @@ import useMobile from "../../../hooks/useMobile";
 import Animator from "../../../components/Animator/Animator";
 import { BtnLined } from "../../../components/BtnLined/BtnLined";
 import { CardsLined } from "../../../components/CardsLined/CardLined";
-import { arrow_right_white, ReactLogo, NodeJsLogo, MySql, AngularLogo, Me_photo, LaravelLogo, icon_close } from "../../../data/img/img-data";
+import { arrow_right_white, ReactLogo, NodeJsLogo, MySql, AngularLogo, Me_photo, LaravelLogo, MoodleLogo, icon_close } from "../../../data/img/img-data";
 import './BannerAboutMe.scss';
 import { useScroll } from "../../../hooks/useScroll";
 
@@ -18,6 +18,7 @@ export const BannerAboutMe = () => {
         { name: "Node.js", icon: NodeJsLogo },
         { name: "MySQL", icon: MySql },
         { name: "React", icon: ReactLogo },
+        { name: "Moodle", icon: MoodleLogo },
     ];
 
     const apis = [

@@ -84,7 +84,7 @@ export const language_en = {
       },
       "techStack": {
          "title": "Tech Stack",
-         "list": ["React", "Angular", "Laravel", "Node.js", "MySQL"]
+         "list": ["React", "Angular", "Laravel", "Node.js", "MySQL", "Moodle"]
       },
       "languages": {
          "title": "Languages",
